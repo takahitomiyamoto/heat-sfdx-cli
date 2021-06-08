@@ -1,0 +1,35 @@
+{
+  "name": "heat-sfdx-cli",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "takahitomiyamoto",
+  "keywords": [
+    "salesforce",
+    "sfdx",
+    "metadata-api"
+  ],
+  "bugs": {
+    "url": "https://github.com/takahitomiyamoto/heat-sfdx-cli/issues"
+  },
+  "homepage": "https://takahitomiyamoto.github.io/heat-sfdx-cli/index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takahitomiyamoto/heat-sfdx-cli.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prettier": "prettier \"**/*.{ts,json,md}\" --write --loglevel log",
+    "typedoc": "typedoc --out docs heat/src && touch docs/.nojekyll"
+  },
+  "devDependencies": {
+    "prettier": "2.3.1",
+    "typedoc": "0.20.36"
+  },
+  "dependencies": {
+    "typescript": "4.3.2"
+  }
+}
