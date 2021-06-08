@@ -6,14 +6,23 @@
 
 # heat-sfdx-cli
 
-This is a Salesforce CLI plug-In.
+This is a Salesforce CLI plug-In, which uses features of the heat-sfdx series.
 
 - [Documentation](https://takahitomiyamoto.github.io/heat-sfdx-cli/index.html)
+
+## heat-sfdx series
+
+| category     | package                                                                      |
+| :----------- | :--------------------------------------------------------------------------- |
+| Metadata API | [heat-sfdx-metadata](https://github.com/takahitomiyamoto/heat-sfdx-metadata) |
+| SOAP API     | [heat-sfdx-soap](https://github.com/takahitomiyamoto/heat-sfdx-soap)         |
+| Tooling API  | [heat-sfdx-tooling](https://github.com/takahitomiyamoto/heat-sfdx-tooling)   |
+| Common       | [heat-sfdx-common](https://github.com/takahitomiyamoto/heat-sfdx-common)     |
 
 ## How to install
 
 ```sh
-sfdx plugins:install heat
+sfdx plugins:install heat-sfdx-cli
 ```
 
 ---

@@ -10,6 +10,8 @@
     "@oclif/errors": "^1",
     "@salesforce/command": "^2",
     "@salesforce/core": "^2",
+    "heat-sfdx-common": "0.1.14",
+    "heat-sfdx-metadata": "0.0.19",
     "tslib": "^1"
   },
   "devDependencies": {
@@ -45,9 +47,6 @@
     "commands": "./lib/commands",
     "bin": "sfdx",
     "topics": {
-      "hello": {
-        "description": "Commands to say hello."
-      },
       "heat": {
         "description": "Commands to execute something with heat."
       }

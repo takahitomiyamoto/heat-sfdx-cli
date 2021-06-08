@@ -59,6 +59,7 @@ export default class Org extends SfdxCommand {
     }
 
     // Query the org
+    // @ts-ignore
     const result = await conn.query<Organization>(query);
 
     // Organization will always return one result, but this is an example of throwing an error

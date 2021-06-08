@@ -1,0 +1,9 @@
+{
+  "commandDescription": "print all metadata types in your org",
+  "versionFlagDescription": "API version [51.0]",
+  "manifestFlagDescription": "manifest file [manifest/package.xml]",
+  "wsdlFlagDescription": "Metadata API WSDL file [config/metadata.wsdl]",
+  "environmentFlagDescription": "environment file [config/environment.json]",
+  "forceFlagDescription": "example boolean flag",
+  "errorNoOrgResults": "No results found for the org '%s'."
+}
