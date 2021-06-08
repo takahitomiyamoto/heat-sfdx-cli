@@ -1,6 +1,6 @@
 # heat-sfdx-cli
 
-This is a Salesforce CLI plug-In.
+This is a Salesforce CLI plug-In, which uses features of the heat-sfdx series.
 
 [![Version](https://img.shields.io/npm/v/heat-sfdx-cli.svg)](https://npmjs.org/package/heat-sfdx-cli)
 [![CircleCI](https://circleci.com/gh/takahitomiyamoto/heat-sfdx-cli/tree/master.svg?style=shield)](https://circleci.com/gh/takahitomiyamoto/heat-sfdx-cli/tree/master)
@@ -10,6 +10,26 @@ This is a Salesforce CLI plug-In.
 [![Known Vulnerabilities](https://snyk.io/test/github/takahitomiyamoto/heat-sfdx-cli/badge.svg)](https://snyk.io/test/github/takahitomiyamoto/heat-sfdx-cli)
 [![Downloads/week](https://img.shields.io/npm/dw/heat-sfdx-cli.svg)](https://npmjs.org/package/heat-sfdx-cli)
 [![License](https://img.shields.io/npm/l/heat-sfdx-cli.svg)](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/master/package.json)
+
+## heat-sfdx series
+
+| category     | package                                                                      |
+| :----------- | :--------------------------------------------------------------------------- |
+| Metadata API | [heat-sfdx-metadata](https://github.com/takahitomiyamoto/heat-sfdx-metadata) |
+| SOAP API     | [heat-sfdx-soap](https://github.com/takahitomiyamoto/heat-sfdx-soap)         |
+| Tooling API  | [heat-sfdx-tooling](https://github.com/takahitomiyamoto/heat-sfdx-tooling)   |
+| Common       | [heat-sfdx-common](https://github.com/takahitomiyamoto/heat-sfdx-common)     |
+
+## How to install
+
+```sh
+# sfdx plugins:install heat-sfdx-cli
+git clone https://github.com/takahitomiyamoto/heat-sfdx-cli.git
+cd heat-sfdx-cli/heat
+sfdx plugins:link
+```
+
+# Under construction
 
 <!-- toc -->
 

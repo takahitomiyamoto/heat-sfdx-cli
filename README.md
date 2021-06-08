@@ -1,7 +1,5 @@
 ![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)
 [![npm version](https://badge.fury.io/js/heat-sfdx-cli.svg)](https://badge.fury.io/js/heat-sfdx-cli)
-[![dependencies status](https://david-dm.org/takahitomiyamoto/heat-sfdx-cli.svg)](https://david-dm.org/takahitomiyamoto/heat-sfdx-cli)
-[![devDependency status](https://david-dm.org/takahitomiyamoto/heat-sfdx-cli/dev-status.svg)](https://david-dm.org/takahitomiyamoto/heat-sfdx-cli#info=devDependencies)
 [![Code Climate](https://codeclimate.com/github/takahitomiyamoto/heat-sfdx-cli.svg)](https://codeclimate.com/github/takahitomiyamoto/heat-sfdx-cli)
 
 # heat-sfdx-cli
@@ -22,7 +20,10 @@ This is a Salesforce CLI plug-In, which uses features of the heat-sfdx series.
 ## How to install
 
 ```sh
-sfdx plugins:install heat-sfdx-cli
+# sfdx plugins:install heat-sfdx-cli
+git clone https://github.com/takahitomiyamoto/heat-sfdx-cli.git
+cd heat-sfdx-cli/heat
+sfdx plugins:link
 ```
 
 ---
