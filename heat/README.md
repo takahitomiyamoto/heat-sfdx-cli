@@ -30,29 +30,33 @@ sfdx plugins:link
 ```
 
 <!-- toc -->
-* [heat-sfdx-cli](#heat-sfdx-cli)
-* [sfdx plugins:install heat-sfdx-cli](#sfdx-pluginsinstall-heat-sfdx-cli)
-* [Debugging your plugin](#debugging-your-plugin)
+
+- [heat-sfdx-cli](#heat-sfdx-cli)
+- [sfdx plugins:install heat-sfdx-cli](#sfdx-pluginsinstall-heat-sfdx-cli)
+- [Debugging your plugin](#debugging-your-plugin)
 <!-- tocstop -->
 
 <!-- install -->
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g heat-sfdx-cli
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-heat-sfdx-cli/0.0.4 darwin-x64 node-v14.17.0
+heat-sfdx-cli/0.0.5 darwin-x64 node-v14.17.0
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND
 ...
 ```
+
 <!-- usagestop -->
 <!-- commands -->
-* [`sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatmanifestbuild--e-string--x-string--w-string---beta---deleted---deprecated---deprecatededitable---installed---installededitable---released---unmanaged---standard--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatorg--n-string--f--v-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+
+- [`sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatmanifestbuild--e-string--x-string--w-string---beta---deleted---deprecated---deprecatededitable---installed---installededitable---released---unmanaged---standard--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+- [`sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatorg--n-string--f--v-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 
 ## `sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -62,8 +66,8 @@ build manifest file with all metadata types in your org
 build manifest file with all metadata types in your org
 
 USAGE
-  $ sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] 
-  [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [-u <string>] 
+  $ sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated]
+  [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [-u <string>]
   [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
@@ -117,11 +121,11 @@ OPTIONS
                                                                                     contain any unmanaged components
 
 EXAMPLE
-  $ sfdx heat:manifest:build -u myOrg@example.com --apiversion 51.0 -x manifest/package.xml -w config/metadata.wsdl -e 
+  $ sfdx heat:manifest:build -u myOrg@example.com --apiversion 51.0 -x manifest/package.xml -w config/metadata.wsdl -e
   config/environment.json --unmanaged
 ```
 
-_See code: [lib/commands/heat/manifest/build.js](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.0.4/lib/commands/heat/manifest/build.js)_
+_See code: [lib/commands/heat/manifest/build.js](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.0.5/lib/commands/heat/manifest/build.js)_
 
 ## `sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -131,7 +135,7 @@ print a greeting and your org IDs
 print a greeting and your org IDs
 
 USAGE
-  $ sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel 
+  $ sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel
   trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
@@ -156,12 +160,13 @@ EXAMPLES
   $ sfdx hello:org --targetusername myOrg@example.com --targetdevhubusername devhub@org.com
      Hello world! This is org: MyOrg and I will be around until Tue Mar 20 2018!
      My hub org id is: 00Dxx000000001234
-  
+
   $ sfdx hello:org --name myname --targetusername myOrg@example.com
      Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
 ```
 
-_See code: [lib/commands/heat/org.js](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.0.4/lib/commands/heat/org.js)_
+_See code: [lib/commands/heat/org.js](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.0.5/lib/commands/heat/org.js)_
+
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 

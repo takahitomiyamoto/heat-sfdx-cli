@@ -1018,9 +1018,9 @@ csprng@*, csprng@~0.1.2:
     sequin "*"
 
 csv-parse@^4.10.1:
-  version "4.15.4"
-  resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-4.15.4.tgz#ad1ec62aaf71a642982dfcb81f1848184d691db5"
-  integrity sha512-OdBbFc0yZhOm17lSxqkirrHlFFVpKRT0wp4DAGoJelsP3LbGzV9LNr7XmM/lrr0uGkCtaqac9UhP8PDHXOAbMg==
+  version "4.16.0"
+  resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-4.16.0.tgz#b4c875e288a41f7ff917cb0d7d45880d563034f6"
+  integrity sha512-Zb4tGPANH4SW0LgC9+s9Mnequs9aqn7N3/pCqNbVjs2XhEF6yWNU2Vm4OGl1v2Go9nw8rXt87Cm2QN/o6Vpqgg==
 
 csv-stringify@^1.0.4:
   version "1.1.2"
@@ -1772,10 +1772,10 @@ heat-sfdx-common@0.1.16:
     uuid "8.3.2"
     xml2js "0.4.23"
 
-heat-sfdx-metadata@0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/heat-sfdx-metadata/-/heat-sfdx-metadata-0.1.3.tgz#5d7b04d6715b07afec289bfdbc66e0094434e349"
-  integrity sha512-sOgFEuaSZPVT1TJTiLB9ddLvTY0AFeFD7H8kdKGyd6J6hnbQ70RyI5i6AJB4WEdyjRXJru8ToBklYxBIcjybUQ==
+heat-sfdx-metadata@0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/heat-sfdx-metadata/-/heat-sfdx-metadata-0.1.4.tgz#278296fbeb660f9627f72c30bf1120415b102449"
+  integrity sha512-0riGWFfi6wsjdfXpVwsMTi1e1WGgl/aZFAqJUj9R89kq22eO9/EmHZeLmRWULXT8PQx/20zNL2PRDklus563gg==
   dependencies:
     "@types/bluebird" "3.5.35"
     "@types/node" "15.12.2"
@@ -2943,6 +2943,11 @@ posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
   integrity sha1-AerA/jta9xoqbAL+q7jB/vfgDqs=
+
+prettier@2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.1.tgz#76903c3f8c4449bc9ac597acefa24dc5ad4cbea6"
+  integrity sha512-p+vNbgpLjif/+D+DwAZAbndtRrR0md0MwfmOVN9N+2RgyACMT+7tfaRnT+WDPkqnuVwleyuBIG2XBxKDme3hPA==
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
