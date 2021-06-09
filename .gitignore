@@ -2,3 +2,4 @@
 .logs/
 .memorandum.txt
 node_modules/
+heat/oclif.manifest.json

@@ -4,7 +4,10 @@
     "declaration": true,
     "outDir": "./lib",
     "importHelpers": true,
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "skipLibCheck": true,
   },
-  "include": ["./src/**/*"]
+  "include": [
+    "./src/**/*"
+  ]
 }
