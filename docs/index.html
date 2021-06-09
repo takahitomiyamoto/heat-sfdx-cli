@@ -1,0 +1,273 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>heat-sfdx-cli</title>
+	<meta name="description" content="Documentation for heat-sfdx-cli">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">heat-sfdx-cli</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>heat-sfdx-cli</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#heat-sfdx-cli" id="heat-sfdx-cli" style="color: inherit; text-decoration: none;">
+					<h1>heat-sfdx-cli</h1>
+				</a>
+				<p>This is a Salesforce CLI plug-In, which uses features of the heat-sfdx series.</p>
+				<p><a href="https://npmjs.org/package/heat-sfdx-cli"><img src="https://img.shields.io/npm/v/heat-sfdx-cli.svg" alt="Version"></a>
+					<a href="https://circleci.com/gh/takahitomiyamoto/heat-sfdx-cli/tree/master"><img src="https://circleci.com/gh/takahitomiyamoto/heat-sfdx-cli/tree/master.svg?style=shield" alt="CircleCI"></a>
+					<a href="https://ci.appveyor.com/project/heroku/heat-sfdx-cli/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/takahitomiyamoto/heat-sfdx-cli?branch=master&svg=true" alt="Appveyor CI"></a>
+					<a href="https://codecov.io/gh/takahitomiyamoto/heat-sfdx-cli"><img src="https://codecov.io/gh/takahitomiyamoto/heat-sfdx-cli/branch/master/graph/badge.svg" alt="Codecov"></a>
+					<a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/takahitomiyamoto/heat-sfdx-cli.svg" alt="Greenkeeper"></a>
+					<a href="https://snyk.io/test/github/takahitomiyamoto/heat-sfdx-cli"><img src="https://snyk.io/test/github/takahitomiyamoto/heat-sfdx-cli/badge.svg" alt="Known Vulnerabilities"></a>
+					<a href="https://npmjs.org/package/heat-sfdx-cli"><img src="https://img.shields.io/npm/dw/heat-sfdx-cli.svg" alt="Downloads/week"></a>
+				<a href="https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/master/package.json"><img src="https://img.shields.io/npm/l/heat-sfdx-cli.svg" alt="License"></a></p>
+				<a href="#heat-sfdx-series" id="heat-sfdx-series" style="color: inherit; text-decoration: none;">
+					<h2>heat-sfdx series</h2>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th align="left">category</th>
+							<th align="left">package</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td align="left">Metadata API</td>
+							<td align="left"><a href="https://github.com/takahitomiyamoto/heat-sfdx-metadata">heat-sfdx-metadata</a></td>
+						</tr>
+						<tr>
+							<td align="left">SOAP API</td>
+							<td align="left"><a href="https://github.com/takahitomiyamoto/heat-sfdx-soap">heat-sfdx-soap</a></td>
+						</tr>
+						<tr>
+							<td align="left">Tooling API</td>
+							<td align="left"><a href="https://github.com/takahitomiyamoto/heat-sfdx-tooling">heat-sfdx-tooling</a></td>
+						</tr>
+						<tr>
+							<td align="left">Common</td>
+							<td align="left"><a href="https://github.com/takahitomiyamoto/heat-sfdx-common">heat-sfdx-common</a></td>
+						</tr>
+				</tbody></table>
+				<a href="#how-to-install" id="how-to-install" style="color: inherit; text-decoration: none;">
+					<h2>How to install</h2>
+				</a>
+				<pre><code class="language-sh"><span style="color: #008000"># sfdx plugins:install heat-sfdx-cli</span>
+<span style="color: #000000">git clone https://github.com/takahitomiyamoto/heat-sfdx-cli.git</span>
+<span style="color: #795E26">cd</span><span style="color: #000000"> heat-sfdx-cli/heat</span>
+<span style="color: #000000">sfdx plugins:link</span>
+</code></pre>
+				<!-- toc -->
+				<ul>
+					<li><a href="#heat-sfdx-cli">heat-sfdx-cli</a></li>
+					<li><a href="#sfdx-pluginsinstall-heat-sfdx-cli">sfdx plugins:install heat-sfdx-cli</a></li>
+					<li><a href="#debugging-your-plugin">Debugging your plugin</a><!-- tocstop -->
+						<!-- install -->
+						<!-- usage -->
+						<pre><code class="language-sh"><span style="color: #000000">$ npm install -g heat-sfdx-cli</span>
+<span style="color: #000000">$ sfdx COMMAND</span>
+<span style="color: #000000">running command...</span>
+<span style="color: #000000">$ sfdx (-v|--version|version)</span>
+<span style="color: #000000">heat-sfdx-cli/0.0.1 darwin-x64 node-v14.17.0</span>
+<span style="color: #000000">$ sfdx --help [COMMAND]</span>
+<span style="color: #000000">USAGE</span>
+<span style="color: #000000">$ sfdx COMMAND</span>
+<span style="color: #000000">...</span>
+</code></pre>
+						<!-- usagestop -->
+					<!-- commands --></li>
+					<li><a href="#sfdx-heatmanifestbuild--v-string--e-string--x-string--w-string--f--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal"><code>sfdx heat:manifest:build [-v &lt;string&gt;] [-e &lt;string&gt;] [-x &lt;string&gt;] [-w &lt;string&gt;] [-f] [-u &lt;string&gt;] [--apiversion &lt;string&gt;] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]</code></a></li>
+					<li><a href="#sfdx-heatorg--n-string--f--v-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal"><code>sfdx heat:org [-n &lt;string&gt;] [-f] [-v &lt;string&gt;] [-u &lt;string&gt;] [--apiversion &lt;string&gt;] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]</code></a></li>
+				</ul>
+				<a href="#sfdx-heatmanifestbuild--v-ltstringgt--e-ltstringgt--x-ltstringgt--w-ltstringgt--f--u-ltstringgt---apiversion-ltstringgt---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal" id="sfdx-heatmanifestbuild--v-ltstringgt--e-ltstringgt--x-ltstringgt--w-ltstringgt--f--u-ltstringgt---apiversion-ltstringgt---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal" style="color: inherit; text-decoration: none;">
+					<h2><code>sfdx heat:manifest:build [-v &lt;string&gt;] [-e &lt;string&gt;] [-x &lt;string&gt;] [-w &lt;string&gt;] [-f] [-u &lt;string&gt;] [--apiversion &lt;string&gt;] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]</code></h2>
+				</a>
+				<p>print all metadata types in your org</p>
+				<pre><code><span style="color: #001080">print</span><span style="color: #000000"> </span><span style="color: #001080">all</span><span style="color: #000000"> </span><span style="color: #001080">metadata</span><span style="color: #000000"> </span><span style="color: #001080">types</span><span style="color: #000000"> </span><span style="color: #0000FF">in</span><span style="color: #000000"> </span><span style="color: #001080">your</span><span style="color: #000000"> </span><span style="color: #001080">org</span>
+
+<span style="color: #0070C1">USAGE</span>
+<span style="color: #000000">  </span><span style="color: #001080">$</span><span style="color: #000000"> </span><span style="color: #001080">sfdx</span><span style="color: #000000"> heat:manifest:</span><span style="color: #001080">build</span><span style="color: #000000"> [-</span><span style="color: #001080">v</span><span style="color: #000000"> &lt;</span><span style="color: #001080">string</span><span style="color: #000000">&gt;] [-</span><span style="color: #001080">e</span><span style="color: #000000"> &lt;</span><span style="color: #001080">string</span><span style="color: #000000">&gt;] [-</span><span style="color: #001080">x</span><span style="color: #000000"> &lt;</span><span style="color: #001080">string</span><span style="color: #000000">&gt;] [-</span><span style="color: #001080">w</span><span style="color: #000000"> &lt;</span><span style="color: #001080">string</span><span style="color: #000000">&gt;] [-</span><span style="color: #001080">f</span><span style="color: #000000">] [-</span><span style="color: #001080">u</span><span style="color: #000000"> &lt;</span><span style="color: #001080">string</span><span style="color: #000000">&gt;] [--</span><span style="color: #001080">apiversion</span>
+<span style="color: #000000">  &lt;</span><span style="color: #267F99">string</span><span style="color: #000000">&gt;] [--</span><span style="color: #001080">json</span><span style="color: #000000">] [--</span><span style="color: #001080">loglevel</span><span style="color: #000000"> </span><span style="color: #001080">trace</span><span style="color: #000000">|</span><span style="color: #001080">debug</span><span style="color: #000000">|</span><span style="color: #001080">info</span><span style="color: #000000">|</span><span style="color: #001080">warn</span><span style="color: #000000">|</span><span style="color: #001080">error</span><span style="color: #000000">|</span><span style="color: #001080">fatal</span><span style="color: #000000">|</span><span style="color: #0070C1">TRACE</span><span style="color: #000000">|</span><span style="color: #0070C1">DEBUG</span><span style="color: #000000">|</span><span style="color: #0070C1">INFO</span><span style="color: #000000">|</span><span style="color: #0070C1">WARN</span><span style="color: #000000">|</span><span style="color: #0070C1">ERROR</span><span style="color: #000000">|</span><span style="color: #0070C1">FATAL</span><span style="color: #000000">]</span>
+
+<span style="color: #0070C1">OPTIONS</span>
+<span style="color: #000000">  -</span><span style="color: #001080">e</span><span style="color: #000000">, --</span><span style="color: #001080">environment</span><span style="color: #000000">=</span><span style="color: #001080">environment</span><span style="color: #000000">                                                     </span><span style="color: #001080">environment</span><span style="color: #000000"> </span><span style="color: #001080">file</span>
+<span style="color: #000000">                                                                                    [</span><span style="color: #001080">config</span><span style="color: #000000">/</span><span style="color: #001080">environment</span><span style="color: #000000">.</span><span style="color: #001080">json</span><span style="color: #000000">]</span>
+
+<span style="color: #000000">  -</span><span style="color: #001080">f</span><span style="color: #000000">, --</span><span style="color: #001080">force</span><span style="color: #000000">                                                                       </span><span style="color: #001080">example</span><span style="color: #000000"> </span><span style="color: #001080">boolean</span><span style="color: #000000"> </span><span style="color: #001080">flag</span>
+
+<span style="color: #000000">  -</span><span style="color: #001080">u</span><span style="color: #000000">, --</span><span style="color: #001080">targetusername</span><span style="color: #000000">=</span><span style="color: #001080">targetusername</span><span style="color: #000000">                                               </span><span style="color: #001080">username</span><span style="color: #000000"> </span><span style="color: #001080">or</span><span style="color: #000000"> </span><span style="color: #001080">alias</span><span style="color: #000000"> </span><span style="color: #001080">for</span><span style="color: #000000"> </span><span style="color: #001080">the</span><span style="color: #000000"> </span><span style="color: #001080">target</span>
+<span style="color: #000000">                                                                                    </span><span style="color: #001080">org</span><span style="color: #000000">; </span><span style="color: #001080">overrides</span><span style="color: #000000"> </span><span style="color: #AF00DB">default</span><span style="color: #000000"> </span><span style="color: #001080">target</span><span style="color: #000000"> </span><span style="color: #001080">org</span>
+
+<span style="color: #000000">  -</span><span style="color: #001080">v</span><span style="color: #000000">, --</span><span style="color: #001080">version</span><span style="color: #000000">=</span><span style="color: #001080">version</span><span style="color: #000000">                                                             </span><span style="color: #0070C1">API</span><span style="color: #000000"> </span><span style="color: #001080">version</span><span style="color: #000000"> [</span><span style="color: #098658">51.0</span><span style="color: #000000">]</span>
+
+<span style="color: #000000">  -</span><span style="color: #001080">w</span><span style="color: #000000">, --</span><span style="color: #001080">wsdl</span><span style="color: #000000">=</span><span style="color: #001080">wsdl</span><span style="color: #000000">                                                                   </span><span style="color: #001080">Metadata</span><span style="color: #000000"> </span><span style="color: #0070C1">API</span><span style="color: #000000"> </span><span style="color: #0070C1">WSDL</span><span style="color: #000000"> </span><span style="color: #001080">file</span>
+<span style="color: #000000">                                                                                    [</span><span style="color: #001080">config</span><span style="color: #000000">/</span><span style="color: #001080">metadata</span><span style="color: #000000">.</span><span style="color: #001080">wsdl</span><span style="color: #000000">]</span>
+
+<span style="color: #000000">  -</span><span style="color: #001080">x</span><span style="color: #000000">, --</span><span style="color: #001080">manifest</span><span style="color: #000000">=</span><span style="color: #001080">manifest</span><span style="color: #000000">                                                           </span><span style="color: #001080">manifest</span><span style="color: #000000"> </span><span style="color: #001080">file</span><span style="color: #000000"> [</span><span style="color: #001080">manifest</span><span style="color: #000000">/</span><span style="color: #001080">package</span><span style="color: #000000">.</span><span style="color: #001080">xml</span><span style="color: #000000">]</span>
+
+<span style="color: #000000">  --</span><span style="color: #001080">apiversion</span><span style="color: #000000">=</span><span style="color: #001080">apiversion</span><span style="color: #000000">                                                           </span><span style="color: #001080">override</span><span style="color: #000000"> </span><span style="color: #001080">the</span><span style="color: #000000"> </span><span style="color: #001080">api</span><span style="color: #000000"> </span><span style="color: #001080">version</span><span style="color: #000000"> </span><span style="color: #001080">used</span><span style="color: #000000"> </span><span style="color: #001080">for</span>
+<span style="color: #000000">                                                                                    </span><span style="color: #001080">api</span><span style="color: #000000"> </span><span style="color: #001080">requests</span><span style="color: #000000"> </span><span style="color: #001080">made</span><span style="color: #000000"> </span><span style="color: #001080">by</span><span style="color: #000000"> </span><span style="color: #0000FF">this</span><span style="color: #000000"> </span><span style="color: #001080">command</span>
+
+<span style="color: #000000">  --</span><span style="color: #001080">json</span><span style="color: #000000">                                                                            </span><span style="color: #001080">format</span><span style="color: #000000"> </span><span style="color: #001080">output</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #267F99">json</span>
+
+<span style="color: #000000">  --</span><span style="color: #001080">loglevel</span><span style="color: #000000">=(</span><span style="color: #001080">trace</span><span style="color: #000000">|</span><span style="color: #001080">debug</span><span style="color: #000000">|</span><span style="color: #001080">info</span><span style="color: #000000">|</span><span style="color: #001080">warn</span><span style="color: #000000">|</span><span style="color: #001080">error</span><span style="color: #000000">|</span><span style="color: #001080">fatal</span><span style="color: #000000">|</span><span style="color: #0070C1">TRACE</span><span style="color: #000000">|</span><span style="color: #0070C1">DEBUG</span><span style="color: #000000">|</span><span style="color: #0070C1">INFO</span><span style="color: #000000">|</span><span style="color: #0070C1">WARN</span><span style="color: #000000">|</span><span style="color: #0070C1">ERROR</span><span style="color: #000000">|</span><span style="color: #0070C1">FATAL</span><span style="color: #000000">)  [</span><span style="color: #001080">default</span><span style="color: #000000">: </span><span style="color: #001080">warn</span><span style="color: #000000">] </span><span style="color: #001080">logging</span><span style="color: #000000"> </span><span style="color: #001080">level</span><span style="color: #000000"> </span><span style="color: #001080">for</span>
+<span style="color: #000000">                                                                                    </span><span style="color: #0000FF">this</span><span style="color: #000000"> </span><span style="color: #001080">command</span><span style="color: #000000"> </span><span style="color: #001080">invocation</span>
+
+<span style="color: #0070C1">EXAMPLE</span>
+<span style="color: #000000">  </span><span style="color: #001080">$</span><span style="color: #000000"> </span><span style="color: #001080">sfdx</span><span style="color: #000000"> heat:manifest:</span><span style="color: #001080">build</span><span style="color: #000000"> -</span><span style="color: #001080">u</span><span style="color: #000000"> </span><span style="color: #001080">myOrg</span><span style="color: #000000">@</span><span style="color: #001080">example</span><span style="color: #000000">.</span><span style="color: #001080">com</span><span style="color: #000000"> -</span><span style="color: #001080">v</span><span style="color: #000000"> </span><span style="color: #098658">51.0</span><span style="color: #000000"> -</span><span style="color: #001080">x</span><span style="color: #000000"> </span><span style="color: #001080">manifest</span><span style="color: #000000">/</span><span style="color: #001080">package</span><span style="color: #000000">.</span><span style="color: #001080">xml</span><span style="color: #000000"> -</span><span style="color: #001080">w</span><span style="color: #000000"> </span><span style="color: #001080">config</span><span style="color: #000000">/</span><span style="color: #001080">metadata</span><span style="color: #000000">.</span><span style="color: #001080">wsdl</span><span style="color: #000000"> -</span><span style="color: #001080">e</span>
+<span style="color: #000000">  </span><span style="color: #001080">config</span><span style="color: #000000">/</span><span style="color: #001080">environment</span><span style="color: #000000">.</span><span style="color: #001080">json</span>
+</code></pre>
+				<p><em>See code: <a href="https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.0.1/lib/commands/heat/manifest/build.js">lib/commands/heat/manifest/build.js</a></em></p>
+				<a href="#sfdx-heatorg--n-ltstringgt--f--v-ltstringgt--u-ltstringgt---apiversion-ltstringgt---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal" id="sfdx-heatorg--n-ltstringgt--f--v-ltstringgt--u-ltstringgt---apiversion-ltstringgt---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal" style="color: inherit; text-decoration: none;">
+					<h2><code>sfdx heat:org [-n &lt;string&gt;] [-f] [-v &lt;string&gt;] [-u &lt;string&gt;] [--apiversion &lt;string&gt;] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]</code></h2>
+				</a>
+				<p>print a greeting and your org IDs</p>
+				<pre><code><span style="color: #001080">print</span><span style="color: #000000"> </span><span style="color: #001080">a</span><span style="color: #000000"> </span><span style="color: #001080">greeting</span><span style="color: #000000"> </span><span style="color: #001080">and</span><span style="color: #000000"> </span><span style="color: #001080">your</span><span style="color: #000000"> </span><span style="color: #001080">org</span><span style="color: #000000"> </span><span style="color: #001080">IDs</span>
+
+<span style="color: #0070C1">USAGE</span>
+<span style="color: #000000">  </span><span style="color: #001080">$</span><span style="color: #000000"> </span><span style="color: #001080">sfdx</span><span style="color: #000000"> heat:</span><span style="color: #001080">org</span><span style="color: #000000"> [-</span><span style="color: #001080">n</span><span style="color: #000000"> &lt;</span><span style="color: #001080">string</span><span style="color: #000000">&gt;] [-</span><span style="color: #001080">f</span><span style="color: #000000">] [-</span><span style="color: #001080">v</span><span style="color: #000000"> &lt;</span><span style="color: #001080">string</span><span style="color: #000000">&gt;] [-</span><span style="color: #001080">u</span><span style="color: #000000"> &lt;</span><span style="color: #001080">string</span><span style="color: #000000">&gt;] [--</span><span style="color: #001080">apiversion</span><span style="color: #000000"> &lt;</span><span style="color: #001080">string</span><span style="color: #000000">&gt;] [--</span><span style="color: #001080">json</span><span style="color: #000000">] [--</span><span style="color: #001080">loglevel</span>
+<span style="color: #000000">  </span><span style="color: #001080">trace</span><span style="color: #000000">|</span><span style="color: #001080">debug</span><span style="color: #000000">|</span><span style="color: #001080">info</span><span style="color: #000000">|</span><span style="color: #001080">warn</span><span style="color: #000000">|</span><span style="color: #001080">error</span><span style="color: #000000">|</span><span style="color: #001080">fatal</span><span style="color: #000000">|</span><span style="color: #0070C1">TRACE</span><span style="color: #000000">|</span><span style="color: #0070C1">DEBUG</span><span style="color: #000000">|</span><span style="color: #0070C1">INFO</span><span style="color: #000000">|</span><span style="color: #0070C1">WARN</span><span style="color: #000000">|</span><span style="color: #0070C1">ERROR</span><span style="color: #000000">|</span><span style="color: #0070C1">FATAL</span><span style="color: #000000">]</span>
+
+<span style="color: #0070C1">OPTIONS</span>
+<span style="color: #000000">  -</span><span style="color: #001080">f</span><span style="color: #000000">, --</span><span style="color: #001080">force</span><span style="color: #000000">                                                                       </span><span style="color: #001080">example</span><span style="color: #000000"> </span><span style="color: #001080">boolean</span><span style="color: #000000"> </span><span style="color: #001080">flag</span>
+<span style="color: #000000">  -</span><span style="color: #001080">n</span><span style="color: #000000">, --</span><span style="color: #001080">name</span><span style="color: #000000">=</span><span style="color: #001080">name</span><span style="color: #000000">                                                                   </span><span style="color: #001080">name</span><span style="color: #000000"> </span><span style="color: #001080">to</span><span style="color: #000000"> </span><span style="color: #001080">print</span>
+
+<span style="color: #000000">  -</span><span style="color: #001080">u</span><span style="color: #000000">, --</span><span style="color: #001080">targetusername</span><span style="color: #000000">=</span><span style="color: #001080">targetusername</span><span style="color: #000000">                                               </span><span style="color: #001080">username</span><span style="color: #000000"> </span><span style="color: #001080">or</span><span style="color: #000000"> </span><span style="color: #001080">alias</span><span style="color: #000000"> </span><span style="color: #001080">for</span><span style="color: #000000"> </span><span style="color: #001080">the</span><span style="color: #000000"> </span><span style="color: #001080">target</span>
+<span style="color: #000000">                                                                                    </span><span style="color: #001080">org</span><span style="color: #000000">; </span><span style="color: #001080">overrides</span><span style="color: #000000"> </span><span style="color: #AF00DB">default</span><span style="color: #000000"> </span><span style="color: #001080">target</span><span style="color: #000000"> </span><span style="color: #001080">org</span>
+
+<span style="color: #000000">  -</span><span style="color: #001080">v</span><span style="color: #000000">, --</span><span style="color: #001080">targetdevhubusername</span><span style="color: #000000">=</span><span style="color: #001080">targetdevhubusername</span><span style="color: #000000">                                   </span><span style="color: #001080">username</span><span style="color: #000000"> </span><span style="color: #001080">or</span><span style="color: #000000"> </span><span style="color: #001080">alias</span><span style="color: #000000"> </span><span style="color: #001080">for</span><span style="color: #000000"> </span><span style="color: #001080">the</span><span style="color: #000000"> </span><span style="color: #001080">dev</span><span style="color: #000000"> </span><span style="color: #001080">hub</span>
+<span style="color: #000000">                                                                                    </span><span style="color: #001080">org</span><span style="color: #000000">; </span><span style="color: #001080">overrides</span><span style="color: #000000"> </span><span style="color: #AF00DB">default</span><span style="color: #000000"> </span><span style="color: #001080">dev</span><span style="color: #000000"> </span><span style="color: #001080">hub</span><span style="color: #000000"> </span><span style="color: #001080">org</span>
+
+<span style="color: #000000">  --</span><span style="color: #001080">apiversion</span><span style="color: #000000">=</span><span style="color: #001080">apiversion</span><span style="color: #000000">                                                           </span><span style="color: #001080">override</span><span style="color: #000000"> </span><span style="color: #001080">the</span><span style="color: #000000"> </span><span style="color: #001080">api</span><span style="color: #000000"> </span><span style="color: #001080">version</span><span style="color: #000000"> </span><span style="color: #001080">used</span><span style="color: #000000"> </span><span style="color: #001080">for</span>
+<span style="color: #000000">                                                                                    </span><span style="color: #001080">api</span><span style="color: #000000"> </span><span style="color: #001080">requests</span><span style="color: #000000"> </span><span style="color: #001080">made</span><span style="color: #000000"> </span><span style="color: #001080">by</span><span style="color: #000000"> </span><span style="color: #0000FF">this</span><span style="color: #000000"> </span><span style="color: #001080">command</span>
+
+<span style="color: #000000">  --</span><span style="color: #001080">json</span><span style="color: #000000">                                                                            </span><span style="color: #001080">format</span><span style="color: #000000"> </span><span style="color: #001080">output</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #267F99">json</span>
+
+<span style="color: #000000">  --</span><span style="color: #001080">loglevel</span><span style="color: #000000">=(</span><span style="color: #001080">trace</span><span style="color: #000000">|</span><span style="color: #001080">debug</span><span style="color: #000000">|</span><span style="color: #001080">info</span><span style="color: #000000">|</span><span style="color: #001080">warn</span><span style="color: #000000">|</span><span style="color: #001080">error</span><span style="color: #000000">|</span><span style="color: #001080">fatal</span><span style="color: #000000">|</span><span style="color: #0070C1">TRACE</span><span style="color: #000000">|</span><span style="color: #0070C1">DEBUG</span><span style="color: #000000">|</span><span style="color: #0070C1">INFO</span><span style="color: #000000">|</span><span style="color: #0070C1">WARN</span><span style="color: #000000">|</span><span style="color: #0070C1">ERROR</span><span style="color: #000000">|</span><span style="color: #0070C1">FATAL</span><span style="color: #000000">)  [</span><span style="color: #001080">default</span><span style="color: #000000">: </span><span style="color: #001080">warn</span><span style="color: #000000">] </span><span style="color: #001080">logging</span><span style="color: #000000"> </span><span style="color: #001080">level</span><span style="color: #000000"> </span><span style="color: #001080">for</span>
+<span style="color: #000000">                                                                                    </span><span style="color: #0000FF">this</span><span style="color: #000000"> </span><span style="color: #001080">command</span><span style="color: #000000"> </span><span style="color: #001080">invocation</span>
+
+<span style="color: #0070C1">EXAMPLES</span>
+<span style="color: #000000">  </span><span style="color: #001080">$</span><span style="color: #000000"> </span><span style="color: #001080">sfdx</span><span style="color: #000000"> hello:</span><span style="color: #001080">org</span><span style="color: #000000"> --</span><span style="color: #001080">targetusername</span><span style="color: #000000"> </span><span style="color: #001080">myOrg</span><span style="color: #000000">@</span><span style="color: #001080">example</span><span style="color: #000000">.</span><span style="color: #001080">com</span><span style="color: #000000"> --</span><span style="color: #001080">targetdevhubusername</span><span style="color: #000000"> </span><span style="color: #001080">devhub</span><span style="color: #000000">@</span><span style="color: #001080">org</span><span style="color: #000000">.</span><span style="color: #001080">com</span>
+<span style="color: #000000">     </span><span style="color: #001080">Hello</span><span style="color: #000000"> </span><span style="color: #001080">world</span><span style="color: #000000">! </span><span style="color: #001080">This</span><span style="color: #000000"> </span><span style="color: #001080">is</span><span style="color: #000000"> org: </span><span style="color: #001080">MyOrg</span><span style="color: #000000"> </span><span style="color: #001080">and</span><span style="color: #000000"> </span><span style="color: #0070C1">I</span><span style="color: #000000"> </span><span style="color: #001080">will</span><span style="color: #000000"> </span><span style="color: #001080">be</span><span style="color: #000000"> </span><span style="color: #001080">around</span><span style="color: #000000"> </span><span style="color: #001080">until</span><span style="color: #000000"> </span><span style="color: #001080">Tue</span><span style="color: #000000"> </span><span style="color: #001080">Mar</span><span style="color: #000000"> </span><span style="color: #098658">20</span><span style="color: #000000"> </span><span style="color: #098658">2018</span><span style="color: #000000">!</span>
+<span style="color: #000000">     </span><span style="color: #001080">My</span><span style="color: #000000"> </span><span style="color: #001080">hub</span><span style="color: #000000"> </span><span style="color: #001080">org</span><span style="color: #000000"> </span><span style="color: #001080">id</span><span style="color: #000000"> is: 00</span><span style="color: #001080">Dxx000000001234</span>
+
+<span style="color: #000000">  </span><span style="color: #001080">$</span><span style="color: #000000"> </span><span style="color: #001080">sfdx</span><span style="color: #000000"> hello:</span><span style="color: #001080">org</span><span style="color: #000000"> --</span><span style="color: #001080">name</span><span style="color: #000000"> </span><span style="color: #001080">myname</span><span style="color: #000000"> --</span><span style="color: #001080">targetusername</span><span style="color: #000000"> </span><span style="color: #001080">myOrg</span><span style="color: #000000">@</span><span style="color: #001080">example</span><span style="color: #000000">.</span><span style="color: #001080">com</span>
+<span style="color: #000000">     </span><span style="color: #001080">Hello</span><span style="color: #000000"> </span><span style="color: #001080">myname</span><span style="color: #000000">! </span><span style="color: #001080">This</span><span style="color: #000000"> </span><span style="color: #001080">is</span><span style="color: #000000"> org: </span><span style="color: #001080">MyOrg</span><span style="color: #000000"> </span><span style="color: #001080">and</span><span style="color: #000000"> </span><span style="color: #0070C1">I</span><span style="color: #000000"> </span><span style="color: #001080">will</span><span style="color: #000000"> </span><span style="color: #001080">be</span><span style="color: #000000"> </span><span style="color: #001080">around</span><span style="color: #000000"> </span><span style="color: #001080">until</span><span style="color: #000000"> </span><span style="color: #001080">Tue</span><span style="color: #000000"> </span><span style="color: #001080">Mar</span><span style="color: #000000"> </span><span style="color: #098658">20</span><span style="color: #000000"> </span><span style="color: #098658">2018</span><span style="color: #000000">!</span>
+</code></pre>
+				<p><em>See code: <a href="https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.0.1/lib/commands/heat/org.js">lib/commands/heat/org.js</a></em></p>
+				<!-- commandsstop -->
+				<!-- debugging-your-plugin -->
+				<a href="#debugging-your-plugin" id="debugging-your-plugin" style="color: inherit; text-decoration: none;">
+					<h1>Debugging your plugin</h1>
+				</a>
+				<p>We recommend using the Visual Studio Code (VS Code) IDE for your plugin development. Included in the <code>.vscode</code> directory of this plugin is a <code>launch.json</code> config file, which allows you to attach a debugger to the node process when running your commands.</p>
+				<p>To debug the <code>hello:org</code> command:</p>
+				<ol>
+					<li>Start the inspector</li>
+				</ol>
+				<p>If you linked your plugin to the sfdx cli, call your command with the <code>dev-suspend</code> switch:</p>
+				<pre><code class="language-sh"><span style="color: #000000">$ sfdx hello:org -u myOrg@example.com --dev-suspend</span>
+</code></pre>
+				<p>Alternatively, to call your command using the <code>bin/run</code> script, set the <code>NODE_OPTIONS</code> environment variable to <code>--inspect-brk</code> when starting the debugger:</p>
+				<pre><code class="language-sh"><span style="color: #000000">$ NODE_OPTIONS=--inspect-brk bin/run hello:org -u myOrg@example.com</span>
+</code></pre>
+				<ol start="2">
+					<li>Set some breakpoints in your command code</li>
+					<li>Click on the Debug icon in the Activity Bar on the side of VS Code to open up the Debug view.</li>
+					<li>In the upper left hand corner of VS Code, verify that the &quot;Attach to Remote&quot; launch configuration has been chosen.</li>
+					<li>Hit the green play button to the left of the &quot;Attach to Remote&quot; launch configuration window. The debugger should now be suspended on the first line of the program.</li>
+					<li>Hit the green play button at the top middle of VS Code (this play button will be to the right of the play button that you clicked in step #5).
+						<br><img src=".images/vscodeScreenshot.png" width="480" height="278"><br>
+					Congrats, you are debugging!</li>
+				</ol>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/commands_heat_manifest_build.html">commands/heat/manifest/build</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/commands_heat_org.html">commands/heat/org</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/index.html">index</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
