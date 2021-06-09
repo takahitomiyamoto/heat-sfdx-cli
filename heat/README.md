@@ -29,16 +29,13 @@ cd heat-sfdx-cli/heat
 sfdx plugins:link
 ```
 
-# Under construction
-
 <!-- toc -->
 * [heat-sfdx-cli](#heat-sfdx-cli)
 * [sfdx plugins:install heat-sfdx-cli](#sfdx-pluginsinstall-heat-sfdx-cli)
-* [Under construction](#under-construction)
 * [Debugging your plugin](#debugging-your-plugin)
 <!-- tocstop -->
-  <!-- install -->
-  <!-- usage -->
+    <!-- install -->
+    <!-- usage -->
 ```sh-session
 $ npm install -g heat-sfdx-cli
 $ sfdx COMMAND
