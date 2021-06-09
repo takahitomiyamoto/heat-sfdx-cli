@@ -34,8 +34,8 @@ sfdx plugins:link
 * [sfdx plugins:install heat-sfdx-cli](#sfdx-pluginsinstall-heat-sfdx-cli)
 * [Debugging your plugin](#debugging-your-plugin)
 <!-- tocstop -->
-    <!-- install -->
-    <!-- usage -->
+<!-- install -->
+<!-- usage -->
 ```sh-session
 $ npm install -g heat-sfdx-cli
 $ sfdx COMMAND
