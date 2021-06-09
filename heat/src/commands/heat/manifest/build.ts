@@ -11,6 +11,18 @@ const DEFAULT = {
   METADATA_WSDL: 'config/metadata.wsdl'
 };
 
+const MANAGEABLE_STATE = {
+  UNDEFINED: undefined,
+  BETA: 'beta',
+  DELETED: 'deleted',
+  DEPRECATED: 'deprecated',
+  DEPRECATED_EDITABLE: 'deprecatedEditable',
+  INSTALLED: 'installed',
+  INSTALLED_EDITABLE: 'installedEditable',
+  RELEASED: 'released',
+  UNMANAGED: 'unmanaged'
+};
+
 // Initialize Messages with the current plugin directory
 Messages.importMessagesDirectory(__dirname);
 
@@ -22,7 +34,7 @@ export default class HeatManifestBuild extends SfdxCommand {
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-    `$ sfdx heat:manifest:build -u myOrg@example.com --apiversion 51.0 -x manifest/package.xml -w config/metadata.wsdl -e config/environment.json`
+    `$ sfdx heat:manifest:build -u myOrg@example.com --apiversion 51.0 -x manifest/package.xml -w config/metadata.wsdl -e config/environment.json --unmanaged`
   ];
 
   public static args = [{ name: 'file' }];
@@ -41,6 +53,33 @@ export default class HeatManifestBuild extends SfdxCommand {
     wsdl: flags.string({
       char: 'w',
       description: messages.getMessage('wsdlFlagDescription')
+    }),
+    beta: flags.boolean({
+      description: messages.getMessage('betaFlagDescription')
+    }),
+    deleted: flags.boolean({
+      description: messages.getMessage('deletedFlagDescription')
+    }),
+    deprecated: flags.boolean({
+      description: messages.getMessage('deprecatedFlagDescription')
+    }),
+    deprecatededitable: flags.boolean({
+      description: messages.getMessage('deprecatededitableFlagDescription')
+    }),
+    installed: flags.boolean({
+      description: messages.getMessage('installedFlagDescription')
+    }),
+    installededitable: flags.boolean({
+      description: messages.getMessage('installededitableFlagDescription')
+    }),
+    released: flags.boolean({
+      description: messages.getMessage('releasedFlagDescription')
+    }),
+    unmanaged: flags.boolean({
+      description: messages.getMessage('unmanagedFlagDescription')
+    }),
+    standard: flags.boolean({
+      description: messages.getMessage('standardFlagDescription')
     })
   };
 
@@ -54,8 +93,6 @@ export default class HeatManifestBuild extends SfdxCommand {
   protected static requiresProject = false;
 
   public async run(): Promise<AnyJson> {
-    // const name = this.flags.name || 'world';
-
     // this.org is guaranteed because requiresUsername=true, as opposed to supportsUsername
     const conn = this.org.getConnection();
 
@@ -63,6 +100,36 @@ export default class HeatManifestBuild extends SfdxCommand {
     if (!this.flags.apiversion) {
       throw new SfdxError(messages.getMessage('errorNoApiversion'));
     }
+
+    const manageableStates = [];
+    if (this.flags.beta) {
+      manageableStates.push(MANAGEABLE_STATE.BETA);
+    }
+    if (this.flags.deleted) {
+      manageableStates.push(MANAGEABLE_STATE.DELETED);
+    }
+    if (this.flags.deprecated) {
+      manageableStates.push(MANAGEABLE_STATE.DEPRECATED);
+    }
+    if (this.flags.deprecatedEditable) {
+      manageableStates.push(MANAGEABLE_STATE.DEPRECATED_EDITABLE);
+    }
+    if (this.flags.installed) {
+      manageableStates.push(MANAGEABLE_STATE.INSTALLED);
+    }
+    if (this.flags.installedEditable) {
+      manageableStates.push(MANAGEABLE_STATE.INSTALLED_EDITABLE);
+    }
+    if (this.flags.released) {
+      manageableStates.push(MANAGEABLE_STATE.RELEASED);
+    }
+    if (this.flags.unmanaged) {
+      manageableStates.push(MANAGEABLE_STATE.UNMANAGED);
+    }
+    if (this.flags.standard) {
+      manageableStates.push(MANAGEABLE_STATE.UNDEFINED);
+    }
+    console.log(manageableStates);
 
     // buildManifest
     const environmentFile = this.flags.environment || DEFAULT.ENVIRONMENT;
@@ -100,7 +167,6 @@ export default class HeatManifestBuild extends SfdxCommand {
       }
     };
     const config = {
-      // TODO: 管理パッケージを含めるフラグ項目
       // TODO: Childrenを含めるフラグ項目
       metadataTypesNoFolder: environment.logs.metadataTypesNoFolder,
       metadataTypesInFolder: environment.logs.metadataTypesInFolder,
@@ -108,6 +174,7 @@ export default class HeatManifestBuild extends SfdxCommand {
       root: environment.logs.root,
       manifest: manifestFile,
       asOfVersion: this.flags.apiversion,
+      manageableStates: manageableStates,
       prefix: {
         metadataTypeMembers: environment.logs.prefix.metadataTypeMembers,
         listMetadata: environment.logs.prefix.listMetadata

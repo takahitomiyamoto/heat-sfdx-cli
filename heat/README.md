@@ -43,7 +43,7 @@ $ npm install -g heat-sfdx-cli
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-heat-sfdx-cli/0.0.3 darwin-x64 node-v14.17.0
+heat-sfdx-cli/0.0.4 darwin-x64 node-v14.17.0
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND
@@ -51,10 +51,10 @@ USAGE
 ```
 <!-- usagestop -->
 <!-- commands -->
-* [`sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatmanifestbuild--e-string--x-string--w-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatmanifestbuild--e-string--x-string--w-string---beta---deleted---deprecated---deprecatededitable---installed---installededitable---released---unmanaged---standard--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 * [`sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatorg--n-string--f--v-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 
-## `sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 build manifest file with all metadata types in your org
 
@@ -62,8 +62,9 @@ build manifest file with all metadata types in your org
 build manifest file with all metadata types in your org
 
 USAGE
-  $ sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [-u <string>] [--apiversion <string>] [--json] 
-  [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] 
+  [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [-u <string>] 
+  [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
   -e, --environment=environment                                                     [default: config/environment.json]
@@ -81,17 +82,46 @@ OPTIONS
   --apiversion=apiversion                                                           override the api version used for
                                                                                     api requests made by this command
 
+  --beta                                                                            set this flag if you would like to
+                                                                                    contain any beta components
+
+  --deleted                                                                         set this flag if you would like to
+                                                                                    contain any deleted components
+
+  --deprecated                                                                      set this flag if you would like to
+                                                                                    contain any deprecated components
+
+  --deprecatededitable                                                              set this flag if you would like to
+                                                                                    contain any deprecatedEditable
+                                                                                    components
+
+  --installed                                                                       set this flag if you would like to
+                                                                                    contain any installed components
+
+  --installededitable                                                               set this flag if you would like to
+                                                                                    contain any installedEditable
+                                                                                    components
+
   --json                                                                            format output as json
 
   --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
                                                                                     this command invocation
 
+  --released                                                                        set this flag if you would like to
+                                                                                    contain any released components
+
+  --standard                                                                        set this flag if you would like to
+                                                                                    contain any standard components
+
+  --unmanaged                                                                       set this flag if you would like to
+                                                                                    contain any unmanaged components
+
 EXAMPLE
   $ sfdx heat:manifest:build -u myOrg@example.com --apiversion 51.0 -x manifest/package.xml -w config/metadata.wsdl -e 
-  config/environment.json
+  config/environment.json --unmanaged
 ```
 
-_See code: [lib/commands/heat/manifest/build.js](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.0.3/lib/commands/heat/manifest/build.js)_
+_See code: [lib/commands/heat/manifest/build.js](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.0.4/lib/commands/heat/manifest/build.js)_
 
 ## `sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -131,7 +161,7 @@ EXAMPLES
      Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
 ```
 
-_See code: [lib/commands/heat/org.js](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.0.3/lib/commands/heat/org.js)_
+_See code: [lib/commands/heat/org.js](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.0.4/lib/commands/heat/org.js)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 
