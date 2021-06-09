@@ -3,5 +3,8 @@
   "manifestFlagDescription": "[default: manifest/package.xml] manifest file",
   "wsdlFlagDescription": "[default: config/metadata.wsdl] Metadata API WSDL file",
   "environmentFlagDescription": "[default: config/environment.json] environment file",
-  "errorNoApiversion": "Missing required flag: \n --apiversion \n See more help with --help"
+  "errorNoApiversion": "Missing required flag: \n --apiversion \n See more help with --help",
+  "errorInvalidEnvironment": "Missing required config: \n --environment config/environment.json",
+  "errorInvalidManifest": "Missing required config: \n --manifest manifest/package.xml",
+  "errorInvalidMetadataWsdl": "Missing required config: \n --wsdl config/metadata.wsdl"
 }

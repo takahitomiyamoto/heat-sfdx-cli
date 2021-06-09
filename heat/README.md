@@ -34,7 +34,6 @@ sfdx plugins:link
 - [heat-sfdx-cli](#heat-sfdx-cli)
 - [sfdx plugins:install heat-sfdx-cli](#sfdx-pluginsinstall-heat-sfdx-cli)
 - [Debugging your plugin](#debugging-your-plugin)
-
 <!-- tocstop -->
 
 <!-- install -->
