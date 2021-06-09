@@ -1772,6 +1772,20 @@ heat-sfdx-common@0.1.16:
     uuid "8.3.2"
     xml2js "0.4.23"
 
+heat-sfdx-common@0.1.18:
+  version "0.1.18"
+  resolved "https://registry.yarnpkg.com/heat-sfdx-common/-/heat-sfdx-common-0.1.18.tgz#9909e25210113e1ef5b26fbf480a9d818c0e0b7b"
+  integrity sha512-IzwzSfBSJ+IGHJcdhqm/zpDhnlelm3PPbCDOCwIH4Y8248cwbbALF9oH/Ao4Uz2iJ6GtUqJjvG8iiNjaZj2q7w==
+  dependencies:
+    "@types/jsonwebtoken" "8.5.1"
+    "@types/node" "15.12.2"
+    "@types/uuid" "8.3.0"
+    "@types/xml2js" "0.4.8"
+    jsonwebtoken "8.5.1"
+    typescript "4.3.2"
+    uuid "8.3.2"
+    xml2js "0.4.23"
+
 heat-sfdx-metadata@0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/heat-sfdx-metadata/-/heat-sfdx-metadata-0.1.4.tgz#278296fbeb660f9627f72c30bf1120415b102449"

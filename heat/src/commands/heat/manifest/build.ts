@@ -2,7 +2,12 @@ import { flags, SfdxCommand } from '@salesforce/command';
 import { Messages, SfdxError } from '@salesforce/core';
 import { AnyJson } from '@salesforce/ts-types';
 import path = require('path');
-import { existsSync, writeFileSyncUtf8 } from 'heat-sfdx-common';
+import {
+  existsSync,
+  mkdirSync,
+  rmdirSync,
+  writeFileSyncUtf8
+} from 'heat-sfdx-common';
 import { buildManifest } from 'heat-sfdx-metadata';
 
 const DEFAULT = {
@@ -129,7 +134,6 @@ export default class HeatManifestBuild extends SfdxCommand {
     if (this.flags.standard) {
       manageableStates.push(MANAGEABLE_STATE.UNDEFINED);
     }
-    console.log(manageableStates);
 
     // buildManifest
     const environmentFile = this.flags.environment || DEFAULT.ENVIRONMENT;
@@ -153,6 +157,11 @@ export default class HeatManifestBuild extends SfdxCommand {
       __dirname,
       path.relative(__dirname, environmentFile)
     ));
+
+    // rm -rf .logs/
+    rmdirSync(environment.logs.root, { recursive: true });
+    // mkdir .logs/
+    mkdirSync(environment.logs.root);
 
     const authorization = {
       // @ts-ignore
