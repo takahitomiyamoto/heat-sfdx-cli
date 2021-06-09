@@ -2,8 +2,7 @@ import { flags, SfdxCommand } from '@salesforce/command';
 import { Messages, SfdxError } from '@salesforce/core';
 import { AnyJson } from '@salesforce/ts-types';
 import path = require('path');
-import fs = require('fs'); // TODO: heat-sfdx-common へ移動
-import { writeFileSyncUtf8 } from 'heat-sfdx-common';
+import { existsSync, writeFileSyncUtf8 } from 'heat-sfdx-common';
 import { buildManifest } from 'heat-sfdx-metadata';
 
 const DEFAULT = {
@@ -71,15 +70,15 @@ export default class HeatManifestBuild extends SfdxCommand {
     const metadataWsdlFile = this.flags.wsdl || DEFAULT.METADATA_WSDL;
 
     // throw error if config files do not exist
-    if (!fs.existsSync(environmentFile)) {
+    if (!existsSync(environmentFile)) {
       throw new SfdxError(messages.getMessage('errorInvalidEnvironment'));
     }
 
-    if (!fs.existsSync(manifestFile)) {
+    if (!existsSync(manifestFile)) {
       throw new SfdxError(messages.getMessage('errorInvalidManifest'));
     }
 
-    if (!fs.existsSync(metadataWsdlFile)) {
+    if (!existsSync(metadataWsdlFile)) {
       throw new SfdxError(messages.getMessage('errorInvalidMetadataWsdl'));
     }
 
