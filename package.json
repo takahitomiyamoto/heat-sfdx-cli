@@ -1,6 +1,6 @@
 {
   "name": "heat-sfdx-cli",
-  "version": "0.0.1",
+  "description": "This is a Salesforce CLI plug-In, which uses features of the heat-sfdx series.",
   "license": "MIT",
   "author": "takahitomiyamoto",
   "keywords": [

@@ -5,9 +5,7 @@
     "outDir": "./lib",
     "importHelpers": true,
     "rootDir": "./src",
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
-  "include": [
-    "./src/**/*"
-  ]
+  "include": ["./src/**/*"]
 }

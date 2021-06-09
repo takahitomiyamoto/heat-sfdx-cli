@@ -1,6 +1,7 @@
 **/.DS_Store
 .logs/
 .memorandum.txt
+manifest/
 node_modules/
 heat/oclif.manifest.json
 heat/heat-sfdx-cli-*.tgz

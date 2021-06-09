@@ -5,9 +5,7 @@
     "outDir": "heat/lib",
     "importHelpers": true,
     "rootDir": "heat/src",
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
-  "include": [
-    "heat/src/**/*"
-  ]
+  "include": ["heat/src/**/*"]
 }

@@ -1,9 +1,7 @@
 {
-  "commandDescription": "print all metadata types in your org",
-  "versionFlagDescription": "API version [51.0]",
-  "manifestFlagDescription": "manifest file [manifest/package.xml]",
-  "wsdlFlagDescription": "Metadata API WSDL file [config/metadata.wsdl]",
-  "environmentFlagDescription": "environment file [config/environment.json]",
-  "forceFlagDescription": "example boolean flag",
-  "errorNoOrgResults": "No results found for the org '%s'."
+  "commandDescription": "build manifest file with all metadata types in your org",
+  "manifestFlagDescription": "[default: manifest/package.xml] manifest file",
+  "wsdlFlagDescription": "[default: config/metadata.wsdl] Metadata API WSDL file",
+  "environmentFlagDescription": "[default: config/environment.json] environment file",
+  "errorNoApiversion": "Missing required flag: \n --apiversion \n See more help with --help"
 }

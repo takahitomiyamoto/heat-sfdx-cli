@@ -5,6 +5,12 @@ import path = require('path');
 import { writeFileSyncUtf8 } from 'heat-sfdx-common';
 import { buildManifest } from 'heat-sfdx-metadata';
 
+const DEFAULT = {
+  ENVIRONMENT: 'config/environment.json',
+  MANIFEST: 'manifest/package.xml',
+  METADATA_WSDL: 'config/metadata.wsdl'
+};
+
 // Initialize Messages with the current plugin directory
 Messages.importMessagesDirectory(__dirname);
 
@@ -16,17 +22,14 @@ export default class HeatManifestBuild extends SfdxCommand {
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-    `$ sfdx heat:manifest:build -u myOrg@example.com -v 51.0 -x manifest/package.xml -w config/metadata.wsdl -e config/environment.json`
+    `$ sfdx heat:manifest:build -u myOrg@example.com --apiversion 51.0 -x manifest/package.xml -w config/metadata.wsdl -e config/environment.json`
   ];
 
   public static args = [{ name: 'file' }];
 
   protected static flagsConfig = {
     // flag with a value (-n, --name=VALUE)
-    version: flags.string({
-      char: 'v',
-      description: messages.getMessage('versionFlagDescription')
-    }),
+    apiversion: flags.builtin(),
     environment: flags.string({
       char: 'e',
       description: messages.getMessage('environmentFlagDescription')
@@ -38,10 +41,6 @@ export default class HeatManifestBuild extends SfdxCommand {
     wsdl: flags.string({
       char: 'w',
       description: messages.getMessage('wsdlFlagDescription')
-    }),
-    force: flags.boolean({
-      char: 'f',
-      description: messages.getMessage('forceFlagDescription')
     })
   };
 
@@ -59,53 +58,43 @@ export default class HeatManifestBuild extends SfdxCommand {
 
     // this.org is guaranteed because requiresUsername=true, as opposed to supportsUsername
     const conn = this.org.getConnection();
-    const query = 'Select Name, TrialExpirationDate from Organization';
 
-    // The type we are querying for
-    interface Organization {
-      Name: string;
-      TrialExpirationDate: string;
-    }
-
-    // Query the org
-    // @ts-ignore
-    const result = await conn.query<Organization>(query);
-
-    // Organization will always return one result, but this is an example of throwing an error
-    // The output and --json will automatically be handled for you.
-    if (!result.records || result.records.length <= 0) {
-      throw new SfdxError(
-        messages.getMessage('errorNoOrgResults', [this.org.getOrgId()])
-      );
+    // parameters required
+    if (!this.flags.apiversion) {
+      throw new SfdxError(messages.getMessage('errorNoApiversion'));
     }
 
     // buildManifest
-    const ENVIRONMENT = this.flags.environment;
+    const environmentFile = this.flags.environment || DEFAULT.ENVIRONMENT;
+    const manifestFile = this.flags.manifest || DEFAULT.MANIFEST;
+    const metadataWsdlFile = this.flags.wsdl || DEFAULT.METADATA_WSDL;
 
     const environment = require(path.join(
       __dirname,
-      path.relative(__dirname, ENVIRONMENT)
+      path.relative(__dirname, environmentFile)
     ));
 
     const authorization = {
       // @ts-ignore
       accessToken: conn.accessToken,
       // @ts-ignore
-      instanceUrl: `${conn.instanceUrl}/services/Soap/m/${this.flags.version}`,
+      instanceUrl: `${conn.instanceUrl}/services/Soap/m/${this.flags.apiversion}`,
       options: {
-        asOfVersion: this.flags.version,
+        asOfVersion: this.flags.apiversion,
         wsdl: {
-          metadata: this.flags.wsdl
+          metadata: metadataWsdlFile
         }
       }
     };
     const config = {
+      // TODO: 管理パッケージを含めるフラグ項目
+      // TODO: Childrenを含めるフラグ項目
       metadataTypesNoFolder: environment.logs.metadataTypesNoFolder,
       metadataTypesInFolder: environment.logs.metadataTypesInFolder,
       metadataTypesFolder: environment.logs.metadataTypesFolder,
       root: environment.logs.root,
-      manifest: this.flags.manifest,
-      asOfVersion: this.flags.version,
+      manifest: manifestFile,
+      asOfVersion: this.flags.apiversion,
       prefix: {
         metadataTypeMembers: environment.logs.prefix.metadataTypeMembers,
         listMetadata: environment.logs.prefix.listMetadata
@@ -114,8 +103,8 @@ export default class HeatManifestBuild extends SfdxCommand {
     const buildManifestResult = await buildManifest(authorization, config);
 
     // archive
-    writeFileSyncUtf8(this.flags.manifest, buildManifestResult);
-    const outputString = `${this.flags.manifest} was created.`;
+    writeFileSyncUtf8(manifestFile, buildManifestResult);
+    const outputString = `${manifestFile} was created.`;
     console.log('');
     console.log(outputString);
 
