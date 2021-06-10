@@ -180,10 +180,6 @@ export default class HeatManifestBuild extends SfdxCommand {
       throw new SfdxError(messages.getMessage('errorInvalidEnvironment'));
     }
 
-    if (!existsSync(manifestFile)) {
-      throw new SfdxError(messages.getMessage('errorInvalidManifest'));
-    }
-
     if (!existsSync(metadataWsdlFile)) {
       throw new SfdxError(messages.getMessage('errorInvalidMetadataWsdl'));
     }
