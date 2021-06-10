@@ -426,7 +426,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides SfdxCommand.args</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/050a6e9/heat/src/commands/heat/manifest/build.ts#L22">src/commands/heat/manifest/build.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/9023524/heat/src/commands/heat/manifest/build.ts#L45">src/commands/heat/manifest/build.ts:45</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -448,7 +448,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides SfdxCommand.description</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/050a6e9/heat/src/commands/heat/manifest/build.ts#L16">src/commands/heat/manifest/build.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/9023524/heat/src/commands/heat/manifest/build.ts#L39">src/commands/heat/manifest/build.ts:39</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -459,7 +459,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides SfdxCommand.examples</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/050a6e9/heat/src/commands/heat/manifest/build.ts#L18">src/commands/heat/manifest/build.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/9023524/heat/src/commands/heat/manifest/build.ts#L41">src/commands/heat/manifest/build.ts:41</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -477,27 +477,54 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-protected tsd-is-static">
 					<a name="flagsconfig" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagProtected">Protected</span> flags<wbr>Config</h3>
-					<div class="tsd-signature tsd-kind-icon">flags<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>environment<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>force<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>version<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>wsdl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<div class="tsd-signature tsd-kind-icon">flags<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>apiversion<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Builtin</span><span class="tsd-signature-symbol">; </span>beta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>child<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>deleted<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>deprecated<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>deprecatededitable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>environment<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>installed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>installededitable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>manifest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>released<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>standard<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>unmanaged<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>wsdl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<p>Overrides SfdxCommand.flagsConfig</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/050a6e9/heat/src/commands/heat/manifest/build.ts#L24">src/commands/heat/manifest/build.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/9023524/heat/src/commands/heat/manifest/build.ts#L47">src/commands/heat/manifest/build.ts:47</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
+								<h5>apiversion<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Builtin</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>beta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>child<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>deleted<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>deprecated<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>deprecatededitable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li class="tsd-parameter">
 								<h5>environment<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>force<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<h5>installed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>installededitable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>manifest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>version<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<h5>released<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>standard<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>unmanaged<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>wsdl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Discriminated</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">&gt;</span></h5>
@@ -604,7 +631,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides SfdxCommand.requiresProject</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/050a6e9/heat/src/commands/heat/manifest/build.ts#L55">src/commands/heat/manifest/build.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/9023524/heat/src/commands/heat/manifest/build.ts#L101">src/commands/heat/manifest/build.ts:101</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -615,7 +642,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides SfdxCommand.requiresUsername</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/050a6e9/heat/src/commands/heat/manifest/build.ts#L49">src/commands/heat/manifest/build.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/9023524/heat/src/commands/heat/manifest/build.ts#L95">src/commands/heat/manifest/build.ts:95</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1242,7 +1269,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides SfdxCommand.run</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/050a6e9/heat/src/commands/heat/manifest/build.ts#L57">src/commands/heat/manifest/build.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/9023524/heat/src/commands/heat/manifest/build.ts#L103">src/commands/heat/manifest/build.ts:103</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AnyJson</span><span class="tsd-signature-symbol">&gt;</span></h4>
