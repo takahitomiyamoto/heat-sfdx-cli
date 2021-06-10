@@ -186,7 +186,10 @@ export default class HeatManifestBuild extends SfdxCommand {
         this.ux.startSpinner(
           `${messages.getMessage('infoCreateManifest')}: ${manifestFile}`
         );
-        if (!existsSync(path.join(__dirname, DEFAULT.MANIFEST_DIR))) {
+        const hasDir = existsSync(
+          path.join(__dirname, path.relative(__dirname, DEFAULT.MANIFEST_DIR))
+        );
+        if (!hasDir) {
           mkdirSync(DEFAULT.MANIFEST_DIR);
         }
         writeFileSyncUtf8(manifestFile, '');
