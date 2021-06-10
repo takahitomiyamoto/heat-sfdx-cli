@@ -23,15 +23,17 @@ This is a Salesforce CLI plug-In, which uses features of the heat-sfdx series.
 ## How to install
 
 ```sh
-# sfdx plugins:install heat-sfdx-cli
-git clone https://github.com/takahitomiyamoto/heat-sfdx-cli.git
-cd heat-sfdx-cli/heat
-sfdx plugins:link
+sfdx plugins:install heat-sfdx-cli
+# git clone https://github.com/takahitomiyamoto/heat-sfdx-cli.git
+# cd heat-sfdx-cli/heat
+# sfdx plugins:link
 ```
 
 <!-- toc -->
 * [heat-sfdx-cli](#heat-sfdx-cli)
-* [sfdx plugins:install heat-sfdx-cli](#sfdx-pluginsinstall-heat-sfdx-cli)
+* [git clone https://github.com/takahitomiyamoto/heat-sfdx-cli.git](#git-clone-httpsgithubcomtakahitomiyamotoheat-sfdx-cligit)
+* [cd heat-sfdx-cli/heat](#cd-heat-sfdx-cliheat)
+* [sfdx plugins:link](#sfdx-pluginslink)
 * [Debugging your plugin](#debugging-your-plugin)
 <!-- tocstop -->
 
@@ -43,7 +45,7 @@ $ npm install -g heat-sfdx-cli
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-heat-sfdx-cli/0.0.7 darwin-x64 node-v14.17.0
+heat-sfdx-cli/0.0.9 darwin-x64 node-v14.17.0
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND
@@ -51,10 +53,10 @@ USAGE
 ```
 <!-- usagestop -->
 <!-- commands -->
-* [`sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [--child] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatmanifestbuild--e-string--x-string--w-string---beta---deleted---deprecated---deprecatededitable---installed---installededitable---released---unmanaged---standard---child--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [--recommended] [--all] [--child] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatmanifestbuild--e-string--x-string--w-string---beta---deleted---deprecated---deprecatededitable---installed---installededitable---released---unmanaged---standard---recommended---all---child--u-string---apiversion-string---verbose---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 * [`sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatorg--n-string--f--v-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 
-## `sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [--child] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [--recommended] [--all] [--child] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 build manifest file with all metadata types in your org
 
@@ -63,8 +65,8 @@ build manifest file with all metadata types in your org
 
 USAGE
   $ sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] 
-  [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [--child] [-u 
-  <string>] [--apiversion <string>] [--json] [--loglevel 
+  [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [--recommended] 
+  [--all] [--child] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel 
   trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
@@ -79,6 +81,9 @@ OPTIONS
 
   -x, --manifest=manifest                                                           [default: manifest/package.xml]
                                                                                     manifest file
+
+  --all                                                                             set this flag if you would like to
+                                                                                    contain any all components
 
   --apiversion=apiversion                                                           override the api version used for
                                                                                     api requests made by this command
@@ -111,6 +116,10 @@ OPTIONS
   --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
                                                                                     this command invocation
 
+  --recommended                                                                     set this flag if you would like to
+                                                                                    contain any standard, unmanaged, and
+                                                                                    child sub-components
+
   --released                                                                        set this flag if you would like to
                                                                                     contain any released components
 
@@ -120,12 +129,29 @@ OPTIONS
   --unmanaged                                                                       set this flag if you would like to
                                                                                     contain any unmanaged components
 
-EXAMPLE
-  $ sfdx heat:manifest:build -u myOrg@example.com --apiversion 51.0 -x manifest/package.xml -w config/metadata.wsdl -e 
-  config/environment.json --unmanaged
+  --verbose                                                                         emit additional command output to
+                                                                                    stdout
+
+EXAMPLES
+
+  [standard, unmanaged components] 
+  $ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com -x manifest/package.xml -w config/metadata.wsdl -e 
+  config/environment.json --standard --unmanaged
+
+  [standard, unmanaged, and unlocked components] 
+  $ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com -x manifest/package.xml -w config/metadata.wsdl -e 
+  config/environment.json --standard --unmanaged --installededitable
+
+  [standard, unmanaged, and child sub-components] 
+  $ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com -x manifest/package.xml -w config/metadata.wsdl -e 
+  config/environment.json --recommended
+
+  [standard, unmanaged, unlocked, managed, and child sub-components] 
+  $ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com -x manifest/package.xml -w config/metadata.wsdl -e 
+  config/environment.json --all
 ```
 
-_See code: [lib/commands/heat/manifest/build.js](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.0.7/lib/commands/heat/manifest/build.js)_
+_See code: [src/commands/heat/manifest/build.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.0.9/src/commands/heat/manifest/build.ts)_
 
 ## `sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -165,7 +191,7 @@ EXAMPLES
      Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
 ```
 
-_See code: [lib/commands/heat/org.js](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.0.7/lib/commands/heat/org.js)_
+_See code: [src/commands/heat/org.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.0.9/src/commands/heat/org.ts)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 

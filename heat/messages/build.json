@@ -12,9 +12,14 @@
   "releasedFlagDescription": "set this flag if you would like to contain any released components",
   "unmanagedFlagDescription": "set this flag if you would like to contain any unmanaged components",
   "standardFlagDescription": "set this flag if you would like to contain any standard components",
+  "recommendedFlagDescription": "set this flag if you would like to contain any standard, unmanaged, and child sub-components",
+  "allFlagDescription": "set this flag if you would like to contain any all components",
   "childFlagDescription": "set this flag if you would like to contain any child sub-components",
   "errorNoApiversion": "Missing required flag: \n --apiversion \n See more help with --help",
   "errorInvalidEnvironment": "Missing required config: \n --environment config/environment.json",
   "errorInvalidManifest": "Missing required config: \n --manifest manifest/package.xml",
-  "errorInvalidMetadataWsdl": "Missing required config: \n --wsdl config/metadata.wsdl"
+  "errorInvalidMetadataWsdl": "Missing required config: \n --wsdl config/metadata.wsdl",
+  "infoGetConnection": "getting connection",
+  "infoCheckFlags": "checking flags",
+  "infoAwaitBuildManifest": "building your manifest file"
 }

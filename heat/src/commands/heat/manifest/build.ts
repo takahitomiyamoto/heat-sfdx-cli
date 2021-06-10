@@ -39,7 +39,10 @@ export default class HeatManifestBuild extends SfdxCommand {
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-    `$ sfdx heat:manifest:build -u myOrg@example.com --apiversion 51.0 -x manifest/package.xml -w config/metadata.wsdl -e config/environment.json --unmanaged`
+    `\n[standard, unmanaged components] \n$ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com -x manifest/package.xml -w config/metadata.wsdl -e config/environment.json --standard --unmanaged`,
+    `\n[standard, unmanaged, and unlocked components] \n$ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com -x manifest/package.xml -w config/metadata.wsdl -e config/environment.json --standard --unmanaged --installededitable`,
+    `\n[standard, unmanaged, and child sub-components] \n$ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com -x manifest/package.xml -w config/metadata.wsdl -e config/environment.json --recommended`,
+    `\n[standard, unmanaged, unlocked, managed, and child sub-components] \n$ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com -x manifest/package.xml -w config/metadata.wsdl -e config/environment.json --all`
   ];
 
   public static args = [{ name: 'file' }];
@@ -47,6 +50,7 @@ export default class HeatManifestBuild extends SfdxCommand {
   protected static flagsConfig = {
     // flag with a value (-n, --name=VALUE)
     apiversion: flags.builtin(),
+    verbose: flags.builtin(),
     environment: flags.string({
       char: 'e',
       description: messages.getMessage('environmentFlagDescription')
@@ -86,6 +90,12 @@ export default class HeatManifestBuild extends SfdxCommand {
     standard: flags.boolean({
       description: messages.getMessage('standardFlagDescription')
     }),
+    recommended: flags.boolean({
+      description: messages.getMessage('recommendedFlagDescription')
+    }),
+    all: flags.boolean({
+      description: messages.getMessage('allFlagDescription')
+    }),
     child: flags.boolean({
       description: messages.getMessage('childFlagDescription')
     })
@@ -101,8 +111,12 @@ export default class HeatManifestBuild extends SfdxCommand {
   protected static requiresProject = false;
 
   public async run(): Promise<AnyJson> {
+    this.ux.startSpinner(messages.getMessage('infoGetConnection'));
     // this.org is guaranteed because requiresUsername=true, as opposed to supportsUsername
     const conn = this.org.getConnection();
+
+    this.ux.stopSpinner(this.ux.getSpinnerStatus());
+    this.ux.startSpinner(messages.getMessage('infoCheckFlags'));
 
     // parameters required
     if (!this.flags.apiversion) {
@@ -110,6 +124,24 @@ export default class HeatManifestBuild extends SfdxCommand {
     }
 
     const manageableStates = [];
+    if (this.flags.recommended) {
+      this.flags.unmanaged = true;
+      this.flags.standard = true;
+      this.flags.child = true;
+    }
+    if (this.flags.all) {
+      this.flags.beta = true;
+      this.flags.deleted = true;
+      this.flags.deprecated = true;
+      this.flags.deprecatedEditable = true;
+      this.flags.installed = true;
+      this.flags.installedEditable = true;
+      this.flags.released = true;
+      this.flags.unmanaged = true;
+      this.flags.standard = true;
+      this.flags.child = true;
+    }
+
     if (this.flags.beta) {
       manageableStates.push(MANAGEABLE_STATE.BETA);
     }
@@ -166,6 +198,11 @@ export default class HeatManifestBuild extends SfdxCommand {
     // mkdir .logs/
     mkdirSync(environment.logs.root);
 
+    this.ux.stopSpinner(this.ux.getSpinnerStatus());
+    this.ux.startSpinner(
+      `${messages.getMessage('infoAwaitBuildManifest')}: ${manifestFile} `
+    );
+
     const authorization = {
       // @ts-ignore
       accessToken: conn.accessToken,
@@ -178,6 +215,7 @@ export default class HeatManifestBuild extends SfdxCommand {
         }
       }
     };
+
     const config = {
       metadataTypesNoFolder: environment.logs.metadataTypesNoFolder,
       metadataTypesInFolder: environment.logs.metadataTypesInFolder,
@@ -187,20 +225,20 @@ export default class HeatManifestBuild extends SfdxCommand {
       asOfVersion: this.flags.apiversion,
       manageableStates: manageableStates,
       child: this.flags.child,
+      verbose: this.flags.verbose,
       prefix: {
         metadataTypeMembers: environment.logs.prefix.metadataTypeMembers,
         listMetadata: environment.logs.prefix.listMetadata
       }
     };
+
     const buildManifestResult = await buildManifest(authorization, config);
+    this.ux.stopSpinner(this.ux.getSpinnerStatus());
 
     // archive
     writeFileSyncUtf8(manifestFile, buildManifestResult);
-    const outputString = `${manifestFile} was created.`;
-    console.log('');
-    console.log(outputString);
 
     // Return an object to be displayed with --json
-    return { orgId: this.org.getOrgId(), outputString };
+    return { orgId: this.org.getOrgId() };
   }
 }

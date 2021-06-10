@@ -1776,10 +1776,10 @@ heat-sfdx-common@0.1.18:
     uuid "8.3.2"
     xml2js "0.4.23"
 
-heat-sfdx-metadata@0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/heat-sfdx-metadata/-/heat-sfdx-metadata-0.2.1.tgz#e72f2b8991406b4fe824ca52d90f9147488ca5c5"
-  integrity sha512-BlS3RJIe1bHpPa3GvZ62ZJ6qDoCQmIaPYFJkGRFAGkKbLeuwOV+2kwdWF/OWdUtcWIjCbTsw8jlewa/Q4AHjDA==
+heat-sfdx-metadata@0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/heat-sfdx-metadata/-/heat-sfdx-metadata-0.2.3.tgz#d0b2c1bed86e96175816d3f1576e329c5a9a792c"
+  integrity sha512-qwHiL5wmeTbws9eH5kqH/U/QtJELsO0MHqQ5Pg3rOzerqE7ci0RShQHefIUfdJHTZtySir36TcJl4kr+yX3wPg==
   dependencies:
     "@types/bluebird" "3.5.35"
     "@types/node" "15.12.2"

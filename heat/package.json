@@ -1,7 +1,7 @@
 {
   "name": "heat-sfdx-cli",
   "description": "This is a Salesforce CLI plug-In, which uses features of the heat-sfdx series.",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "author": "Takahito Miyamoto",
   "bugs": "https://github.com/takahitomiyamoto/heat-sfdx-cli/issues",
   "dependencies": {
@@ -11,9 +11,8 @@
     "@salesforce/command": "^2",
     "@salesforce/core": "^2",
     "heat-sfdx-common": "0.1.18",
-    "heat-sfdx-metadata": "0.2.1",
-    "tslib": "^1",
-    "typescript": "4.3.2"
+    "heat-sfdx-metadata": "0.2.3",
+    "tslib": "^1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
@@ -29,7 +28,8 @@
     "nyc": "^14",
     "prettier": "2.3.1",
     "ts-node": "^8",
-    "tslint": "^5"
+    "tslint": "^5",
+    "typescript": "4.3.2"
   },
   "engines": {
     "node": ">=8.0.0"

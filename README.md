@@ -20,10 +20,10 @@ This is a Salesforce CLI plug-In, which uses features of the heat-sfdx series.
 ## How to install
 
 ```sh
-# sfdx plugins:install heat-sfdx-cli
-git clone https://github.com/takahitomiyamoto/heat-sfdx-cli.git
-cd heat-sfdx-cli/heat
-sfdx plugins:link
+sfdx plugins:install heat-sfdx-cli
+# git clone https://github.com/takahitomiyamoto/heat-sfdx-cli.git
+# cd heat-sfdx-cli/heat
+# sfdx plugins:link
 ```
 
 ---
