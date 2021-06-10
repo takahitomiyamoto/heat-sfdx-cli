@@ -13,6 +13,7 @@ import { buildManifest } from 'heat-sfdx-metadata';
 const DEFAULT = {
   ENVIRONMENT: 'config/environment.json',
   MANIFEST: 'manifest/package.xml',
+  MANIFEST_DIR: 'manifest',
   METADATA_WSDL: 'config/metadata.wsdl'
 };
 
@@ -123,7 +124,6 @@ export default class HeatManifestBuild extends SfdxCommand {
       throw new SfdxError(messages.getMessage('errorNoApiversion'));
     }
 
-    const manageableStates = [];
     if (this.flags.recommended) {
       this.flags.unmanaged = true;
       this.flags.standard = true;
@@ -142,6 +142,7 @@ export default class HeatManifestBuild extends SfdxCommand {
       this.flags.child = true;
     }
 
+    const manageableStates = [];
     if (this.flags.beta) {
       manageableStates.push(MANAGEABLE_STATE.BETA);
     }
@@ -176,12 +177,34 @@ export default class HeatManifestBuild extends SfdxCommand {
     const metadataWsdlFile = this.flags.wsdl || DEFAULT.METADATA_WSDL;
 
     // throw error if config files do not exist
-    if (!existsSync(environmentFile)) {
-      throw new SfdxError(messages.getMessage('errorInvalidEnvironment'));
-    }
-
     if (!existsSync(metadataWsdlFile)) {
       throw new SfdxError(messages.getMessage('errorInvalidMetadataWsdl'));
+    }
+
+    if (!existsSync(manifestFile)) {
+      this.ux.pauseSpinner(() => {
+        this.ux.startSpinner(
+          `${messages.getMessage('infoCreateManifest')}: ${manifestFile}`
+        );
+        if (!existsSync(path.join(__dirname, DEFAULT.MANIFEST_DIR))) {
+          mkdirSync(DEFAULT.MANIFEST_DIR);
+        }
+        writeFileSyncUtf8(manifestFile, '');
+        this.ux.stopSpinner(this.ux.getSpinnerStatus());
+      }, messages.getMessage('errorInvalidManifest'));
+    }
+
+    if (!existsSync(environmentFile)) {
+      this.ux.pauseSpinner(() => {
+        this.ux.startSpinner(
+          `${messages.getMessage('infoCreateEnvironment')}: ${environmentFile}`
+        );
+        writeFileSyncUtf8(
+          environmentFile,
+          messages.getMessage('jsonEnvironment')
+        );
+        this.ux.stopSpinner(this.ux.getSpinnerStatus());
+      }, messages.getMessage('errorInvalidEnvironment'));
     }
 
     const environment = require(path.join(

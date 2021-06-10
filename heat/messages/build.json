@@ -16,10 +16,13 @@
   "allFlagDescription": "set this flag if you would like to contain any all components",
   "childFlagDescription": "set this flag if you would like to contain any child sub-components",
   "errorNoApiversion": "Missing required flag: \n --apiversion \n See more help with --help",
-  "errorInvalidEnvironment": "Missing required config: \n --environment config/environment.json",
-  "errorInvalidManifest": "Missing required config: \n --manifest manifest/package.xml",
-  "errorInvalidMetadataWsdl": "Missing required config: \n --wsdl config/metadata.wsdl",
+  "errorInvalidEnvironment": "Missing required config file: \n --environment config/environment.json",
+  "errorInvalidManifest": "Missing required config file: \n --manifest manifest/package.xml",
+  "errorInvalidMetadataWsdl": "Missing required config file: \n --wsdl config/metadata.wsdl \n Please download .wsdl from Salesforce: [Setup] > [Integrations] > [API] > [Generate Metadata WSDL]",
   "infoGetConnection": "getting connection",
   "infoCheckFlags": "checking flags",
-  "infoAwaitBuildManifest": "building your manifest file"
+  "infoAwaitBuildManifest": "building your manifest file",
+  "infoCreateEnvironment": "creating environment file",
+  "infoCreateManifest": "creating manifest file",
+  "jsonEnvironment": "{\"logs\":{\"root\":\".logs\",\"prefix\":{\"listMetadata\":\".logs/20.list-metadata\",\"metadataTypeMembers\":\".logs/30.members\"},\"metadataTypesNoFolder\":\".logs/10.metadata-types-no-folder.json\",\"metadataTypesInFolder\":\".logs/11.metadata-types-in-folder.json\",\"metadataTypesFolder\":\".logs/12.metadata-types-folder.json\"}}"
 }
