@@ -1758,20 +1758,6 @@ he@1.1.1:
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
   integrity sha1-k0EP0hsAlzUVH4howvJx80J+I/0=
 
-heat-sfdx-common@0.1.16:
-  version "0.1.16"
-  resolved "https://registry.yarnpkg.com/heat-sfdx-common/-/heat-sfdx-common-0.1.16.tgz#cf70ef761265b3f63c2987c07e4df2c0d58a0280"
-  integrity sha512-iPWsY11+Z0kL5YE4IEFLr5Qr/TmKTa4yNdcyXBPA/Z1yySPoDvqj9OTFzLYscPYDqn7Ms7BQxQDzLcs7Cc1Dzg==
-  dependencies:
-    "@types/jsonwebtoken" "8.5.1"
-    "@types/node" "15.12.2"
-    "@types/uuid" "8.3.0"
-    "@types/xml2js" "0.4.8"
-    jsonwebtoken "8.5.1"
-    typescript "4.3.2"
-    uuid "8.3.2"
-    xml2js "0.4.23"
-
 heat-sfdx-common@0.1.18:
   version "0.1.18"
   resolved "https://registry.yarnpkg.com/heat-sfdx-common/-/heat-sfdx-common-0.1.18.tgz#9909e25210113e1ef5b26fbf480a9d818c0e0b7b"
@@ -1786,17 +1772,17 @@ heat-sfdx-common@0.1.18:
     uuid "8.3.2"
     xml2js "0.4.23"
 
-heat-sfdx-metadata@0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/heat-sfdx-metadata/-/heat-sfdx-metadata-0.1.4.tgz#278296fbeb660f9627f72c30bf1120415b102449"
-  integrity sha512-0riGWFfi6wsjdfXpVwsMTi1e1WGgl/aZFAqJUj9R89kq22eO9/EmHZeLmRWULXT8PQx/20zNL2PRDklus563gg==
+heat-sfdx-metadata@0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/heat-sfdx-metadata/-/heat-sfdx-metadata-0.2.1.tgz#e72f2b8991406b4fe824ca52d90f9147488ca5c5"
+  integrity sha512-BlS3RJIe1bHpPa3GvZ62ZJ6qDoCQmIaPYFJkGRFAGkKbLeuwOV+2kwdWF/OWdUtcWIjCbTsw8jlewa/Q4AHjDA==
   dependencies:
     "@types/bluebird" "3.5.35"
     "@types/node" "15.12.2"
     "@types/request" "2.48.5"
     "@types/sax" "1.2.1"
     fast-safe-stringify "2.0.7"
-    heat-sfdx-common "0.1.16"
+    heat-sfdx-common "0.1.18"
     soap "0.39.0"
     typescript "4.3.2"
 

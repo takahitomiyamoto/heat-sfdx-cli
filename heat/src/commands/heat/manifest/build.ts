@@ -85,6 +85,9 @@ export default class HeatManifestBuild extends SfdxCommand {
     }),
     standard: flags.boolean({
       description: messages.getMessage('standardFlagDescription')
+    }),
+    child: flags.boolean({
+      description: messages.getMessage('childFlagDescription')
     })
   };
 
@@ -176,7 +179,6 @@ export default class HeatManifestBuild extends SfdxCommand {
       }
     };
     const config = {
-      // TODO: Childrenを含めるフラグ項目
       metadataTypesNoFolder: environment.logs.metadataTypesNoFolder,
       metadataTypesInFolder: environment.logs.metadataTypesInFolder,
       metadataTypesFolder: environment.logs.metadataTypesFolder,
@@ -184,6 +186,7 @@ export default class HeatManifestBuild extends SfdxCommand {
       manifest: manifestFile,
       asOfVersion: this.flags.apiversion,
       manageableStates: manageableStates,
+      child: this.flags.child,
       prefix: {
         metadataTypeMembers: environment.logs.prefix.metadataTypeMembers,
         listMetadata: environment.logs.prefix.listMetadata
