@@ -1,4 +1,5 @@
 **/.DS_Store
+.heat-logs/
 .logs/
 .memorandum.txt
 manifest/

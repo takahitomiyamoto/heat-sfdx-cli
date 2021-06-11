@@ -217,9 +217,9 @@ export default class HeatManifestBuild extends SfdxCommand {
       path.relative(__dirname, environmentFile)
     ));
 
-    // rm -rf .logs/
+    // rm -rf .heat-logs/
     rmdirSync(environment.logs.root, { recursive: true });
-    // mkdir .logs/
+    // mkdir .heat-logs/
     mkdirSync(environment.logs.root);
 
     this.ux.stopSpinner(this.ux.getSpinnerStatus());

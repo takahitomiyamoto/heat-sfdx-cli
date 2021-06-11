@@ -45,7 +45,7 @@ $ npm install -g heat-sfdx-cli
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-heat-sfdx-cli/0.1.6 darwin-x64 node-v14.17.0
+heat-sfdx-cli/0.1.7 darwin-x64 node-v14.17.0
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND
@@ -147,7 +147,7 @@ EXAMPLES
   $ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com --all
 ```
 
-_See code: [src/commands/heat/manifest/build.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.1.6/src/commands/heat/manifest/build.ts)_
+_See code: [src/commands/heat/manifest/build.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.1.7/src/commands/heat/manifest/build.ts)_
 
 ## `sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -187,7 +187,7 @@ EXAMPLES
      Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
 ```
 
-_See code: [src/commands/heat/org.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.1.6/src/commands/heat/org.ts)_
+_See code: [src/commands/heat/org.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.1.7/src/commands/heat/org.ts)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 

@@ -1,12 +1,12 @@
 {
   "logs": {
-    "root": ".logs",
+    "root": ".heat-logs",
     "prefix": {
-      "listMetadata": ".logs/20.list-metadata",
-      "metadataTypeMembers": ".logs/30.members"
+      "listMetadata": ".heat-logs/20.list-metadata",
+      "metadataTypeMembers": ".heat-logs/30.members"
     },
-    "metadataTypesNoFolder": ".logs/10.metadata-types-no-folder.json",
-    "metadataTypesInFolder": ".logs/11.metadata-types-in-folder.json",
-    "metadataTypesFolder": ".logs/12.metadata-types-folder.json"
+    "metadataTypesNoFolder": ".heat-logs/10.metadata-types-no-folder.json",
+    "metadataTypesInFolder": ".heat-logs/11.metadata-types-in-folder.json",
+    "metadataTypesFolder": ".heat-logs/12.metadata-types-folder.json"
   }
 }
