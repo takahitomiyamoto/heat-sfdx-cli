@@ -45,7 +45,7 @@ $ npm install -g heat-sfdx-cli
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-heat-sfdx-cli/0.1.5 darwin-x64 node-v14.17.0
+heat-sfdx-cli/0.1.6 darwin-x64 node-v14.17.0
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND
@@ -135,23 +135,19 @@ OPTIONS
 EXAMPLES
 
   [standard and unmanaged components] 
-  $ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com -x manifest/package.xml -w config/metadata.wsdl -e 
-  config/environment.json --standard --unmanaged
+  $ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com --standard --unmanaged
 
   [standard, unmanaged and unlocked components] 
-  $ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com -x manifest/package.xml -w config/metadata.wsdl -e 
-  config/environment.json --standard --unmanaged --installededitable
+  $ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com --standard --unmanaged --installededitable
 
   [standard, unmanaged and child sub-components] 
-  $ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com -x manifest/package.xml -w config/metadata.wsdl -e 
-  config/environment.json --recommended
+  $ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com --recommended
 
   [standard, unmanaged, unlocked, managed and child sub-components] 
-  $ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com -x manifest/package.xml -w config/metadata.wsdl -e 
-  config/environment.json --all
+  $ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com --all
 ```
 
-_See code: [src/commands/heat/manifest/build.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.1.5/src/commands/heat/manifest/build.ts)_
+_See code: [src/commands/heat/manifest/build.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.1.6/src/commands/heat/manifest/build.ts)_
 
 ## `sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -191,7 +187,7 @@ EXAMPLES
      Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
 ```
 
-_See code: [src/commands/heat/org.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.1.5/src/commands/heat/org.ts)_
+_See code: [src/commands/heat/org.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.1.6/src/commands/heat/org.ts)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 

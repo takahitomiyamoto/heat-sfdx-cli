@@ -18,7 +18,7 @@
   "errorNoApiversion": "Missing required flag: \n --apiversion \n See more help with --help",
   "errorInvalidEnvironment": "Missing required config file: \n --environment config/environment.json",
   "errorInvalidManifest": "Missing required config file: \n --manifest manifest/package.xml",
-  "errorInvalidMetadataWsdl": "Missing required config file: \n --wsdl config/metadata.wsdl \n Please download .wsdl from Salesforce: [Setup] > [Integrations] > [API] > [Generate Metadata WSDL]",
+  "errorInvalidMetadataWsdl": "Missing required config file: \n --wsdl config/metadata.wsdl \n 1) download .wsdl from Salesforce: [Setup] > [Integrations] > [API] > [Generate Metadata WSDL] \n 2) locate it in your directory config/",
   "infoGetConnection": "getting connection",
   "infoCheckFlags": "checking flags",
   "infoAwaitBuildManifest": "building your manifest file",

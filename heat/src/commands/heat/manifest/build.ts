@@ -40,10 +40,10 @@ export default class HeatManifestBuild extends SfdxCommand {
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-    `\n[standard and unmanaged components] \n$ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com -x manifest/package.xml -w config/metadata.wsdl -e config/environment.json --standard --unmanaged`,
-    `\n[standard, unmanaged and unlocked components] \n$ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com -x manifest/package.xml -w config/metadata.wsdl -e config/environment.json --standard --unmanaged --installededitable`,
-    `\n[standard, unmanaged and child sub-components] \n$ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com -x manifest/package.xml -w config/metadata.wsdl -e config/environment.json --recommended`,
-    `\n[standard, unmanaged, unlocked, managed and child sub-components] \n$ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com -x manifest/package.xml -w config/metadata.wsdl -e config/environment.json --all`
+    `\n[standard and unmanaged components] \n$ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com --standard --unmanaged`,
+    `\n[standard, unmanaged and unlocked components] \n$ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com --standard --unmanaged --installededitable`,
+    `\n[standard, unmanaged and child sub-components] \n$ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com --recommended`,
+    `\n[standard, unmanaged, unlocked, managed and child sub-components] \n$ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com --all`
   ];
 
   public static args = [{ name: 'file' }];
@@ -112,6 +112,8 @@ export default class HeatManifestBuild extends SfdxCommand {
   protected static requiresProject = false;
 
   public async run(): Promise<AnyJson> {
+    // TODO: 関数に分割
+
     this.ux.startSpinner(messages.getMessage('infoGetConnection'));
     // this.org is guaranteed because requiresUsername=true, as opposed to supportsUsername
     const conn = this.org.getConnection();
