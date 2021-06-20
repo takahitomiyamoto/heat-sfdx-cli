@@ -34,7 +34,7 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('heat-sfdx-cli', 'build');
+const messages = Messages.loadMessages('heat-sfdx-cli', 'manifest-build');
 
 export default class HeatManifestBuild extends SfdxCommand {
   public static description = messages.getMessage('commandDescription');
