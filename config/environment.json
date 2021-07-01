@@ -5,6 +5,23 @@
       "listMetadata": ".heat-logs/20.list-metadata",
       "metadataTypeMembers": ".heat-logs/30.members"
     },
+    "apex": { "rawData": ".heat-logs/apex" },
+    "apexClass": {
+      "rawData": ".heat-logs/apex-class",
+      "symbolTable": ".heat-logs/apex-class/symbol-table"
+    },
+    "apexTrigger": {
+      "rawData": ".heat-logs/apex-trigger",
+      "symbolTable": ".heat-logs/apex-trigger/symbol-table"
+    },
+    "createMetadataContainer": ".heat-logs/apex/10.create-metadata-container.json",
+    "retrieveApexClasses": ".heat-logs/apex-class/11.retrieve-apex-classes.json",
+    "createApexClassMembers": ".heat-logs/apex-class/12.create-apex-class-members.json",
+    "createContainerAsyncRequest": ".heat-logs/apex/13.create-container-async-request.json",
+    "retrieveContainerAsyncRequests": ".heat-logs/apex/14.retrieve-container-async-requests.json",
+    "retrieveApexTriggers": ".heat-logs/apex-trigger/11.retrieve-apex-triggers.json",
+    "createApexTriggerMembers": ".heat-logs/apex-trigger/12.create-apex-trigger-members.json",
+    "metadataContainerList": ".heat-logs/metadataContainerList.json",
     "metadataTypesNoFolder": ".heat-logs/10.metadata-types-no-folder.json",
     "metadataTypesInFolder": ".heat-logs/11.metadata-types-in-folder.json",
     "metadataTypesFolder": ".heat-logs/12.metadata-types-folder.json"

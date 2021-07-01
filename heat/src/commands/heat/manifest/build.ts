@@ -40,10 +40,10 @@ export default class HeatManifestBuild extends SfdxCommand {
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-    `\n[standard and unmanaged components] \n$ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com --standard --unmanaged`,
-    `\n[standard, unmanaged and unlocked components] \n$ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com --standard --unmanaged --installededitable`,
-    `\n[standard, unmanaged and child sub-components] \n$ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com --recommended`,
-    `\n[standard, unmanaged, unlocked, managed and child sub-components] \n$ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com --all`
+    `\n[standard and unmanaged components] \n$ sfdx heat:manifest:build --apiversion 52.0 -u myOrg@example.com --standard --unmanaged`,
+    `\n[standard, unmanaged and unlocked components] \n$ sfdx heat:manifest:build --apiversion 52.0 -u myOrg@example.com --standard --unmanaged --installededitable`,
+    `\n[standard, unmanaged and child sub-components] \n$ sfdx heat:manifest:build --apiversion 52.0 -u myOrg@example.com --recommended`,
+    `\n[standard, unmanaged, unlocked, managed and child sub-components] \n$ sfdx heat:manifest:build --apiversion 52.0 -u myOrg@example.com --all`
   ];
 
   public static args = [{ name: 'file' }];
