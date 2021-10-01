@@ -30,31 +30,36 @@ sfdx plugins:install heat-sfdx-cli
 ```
 
 <!-- toc -->
-* [heat-sfdx-cli](#heat-sfdx-cli)
-* [git clone https://github.com/takahitomiyamoto/heat-sfdx-cli.git](#git-clone-httpsgithubcomtakahitomiyamotoheat-sfdx-cligit)
-* [cd heat-sfdx-cli/heat](#cd-heat-sfdx-cliheat)
-* [sfdx plugins:link](#sfdx-pluginslink)
-* [Debugging your plugin](#debugging-your-plugin)
+
+- [heat-sfdx-cli](#heat-sfdx-cli)
+- [git clone https://github.com/takahitomiyamoto/heat-sfdx-cli.git](#git-clone-httpsgithubcomtakahitomiyamotoheat-sfdx-cligit)
+- [cd heat-sfdx-cli/heat](#cd-heat-sfdx-cliheat)
+- [sfdx plugins:link](#sfdx-pluginslink)
+- [Debugging your plugin](#debugging-your-plugin)
 <!-- tocstop -->
 
 <!-- install -->
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g heat-sfdx-cli
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-heat-sfdx-cli/0.1.7 darwin-x64 node-v14.17.0
+heat-sfdx-cli/0.2.0 darwin-x64 node-v14.17.1
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND
 ...
 ```
+
 <!-- usagestop -->
 <!-- commands -->
-* [`sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [--recommended] [--all] [--child] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatmanifestbuild--e-string--x-string--w-string---beta---deleted---deprecated---deprecatededitable---installed---installededitable---released---unmanaged---standard---recommended---all---child--u-string---apiversion-string---verbose---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatorg--n-string--f--v-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+
+- [`sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [--recommended] [--all] [--child] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatmanifestbuild--e-string--x-string--w-string---beta---deleted---deprecated---deprecatededitable---installed---installededitable---released---unmanaged---standard---recommended---all---child--u-string---apiversion-string---verbose---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+- [`sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatorg--n-string--f--v-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+- [`sfdx heat:spec:apex:build [-e <string>] [-o <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatspecapexbuild--e-string--o-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 
 ## `sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [--recommended] [--all] [--child] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -64,9 +69,9 @@ build manifest file with all metadata types in your org
 build manifest file with all metadata types in your org
 
 USAGE
-  $ sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] 
-  [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [--recommended] 
-  [--all] [--child] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel 
+  $ sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated]
+  [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [--recommended]
+  [--all] [--child] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel
   trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
@@ -134,20 +139,20 @@ OPTIONS
 
 EXAMPLES
 
-  [standard and unmanaged components] 
-  $ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com --standard --unmanaged
+  [standard and unmanaged components]
+  $ sfdx heat:manifest:build --apiversion 52.0 -u myOrg@example.com --standard --unmanaged
 
-  [standard, unmanaged and unlocked components] 
-  $ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com --standard --unmanaged --installededitable
+  [standard, unmanaged and unlocked components]
+  $ sfdx heat:manifest:build --apiversion 52.0 -u myOrg@example.com --standard --unmanaged --installededitable
 
-  [standard, unmanaged and child sub-components] 
-  $ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com --recommended
+  [standard, unmanaged and child sub-components]
+  $ sfdx heat:manifest:build --apiversion 52.0 -u myOrg@example.com --recommended
 
-  [standard, unmanaged, unlocked, managed and child sub-components] 
-  $ sfdx heat:manifest:build --apiversion 51.0 -u myOrg@example.com --all
+  [standard, unmanaged, unlocked, managed and child sub-components]
+  $ sfdx heat:manifest:build --apiversion 52.0 -u myOrg@example.com --all
 ```
 
-_See code: [src/commands/heat/manifest/build.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.1.7/src/commands/heat/manifest/build.ts)_
+_See code: [src/commands/heat/manifest/build.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.2.0/src/commands/heat/manifest/build.ts)_
 
 ## `sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -157,7 +162,7 @@ print a greeting and your org IDs
 print a greeting and your org IDs
 
 USAGE
-  $ sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel 
+  $ sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel
   trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
@@ -182,12 +187,48 @@ EXAMPLES
   $ sfdx hello:org --targetusername myOrg@example.com --targetdevhubusername devhub@org.com
      Hello world! This is org: MyOrg and I will be around until Tue Mar 20 2018!
      My hub org id is: 00Dxx000000001234
-  
+
   $ sfdx hello:org --name myname --targetusername myOrg@example.com
      Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
 ```
 
-_See code: [src/commands/heat/org.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.1.7/src/commands/heat/org.ts)_
+_See code: [src/commands/heat/org.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.2.0/src/commands/heat/org.ts)_
+
+## `sfdx heat:spec:apex:build [-e <string>] [-o <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+
+build any specification documents of Apex classes or triggers in markdown format
+
+```
+build any specification documents of Apex classes or triggers in markdown format
+
+USAGE
+  $ sfdx heat:spec:apex:build [-e <string>] [-o <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel
+  trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+OPTIONS
+  -e, --environment=environment                                                     [default: config/environment.json]
+                                                                                    environment file
+
+  -o, --output=output                                                               [default: docs] output directory
+
+  -u, --targetusername=targetusername                                               username or alias for the target
+                                                                                    org; overrides default target org
+
+  --apiversion=apiversion                                                           override the api version used for
+                                                                                    api requests made by this command
+
+  --json                                                                            format output as json
+
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
+                                                                                    this command invocation
+
+EXAMPLE
+
+  $ sfdx heat:spec:apex:build --apiversion 52.0 -u myOrg@example.com -o docs
+```
+
+_See code: [src/commands/heat/spec/apex/build.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.2.0/src/commands/heat/spec/apex/build.ts)_
+
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 
