@@ -5,7 +5,7 @@ import path = require('path');
 import {
   existsSync,
   mkdirSync,
-  rmdirSync,
+  rmSync,
   writeFileSyncUtf8
 } from 'heat-sfdx-common';
 import { buildManifest } from 'heat-sfdx-metadata';
@@ -218,7 +218,7 @@ export default class HeatManifestBuild extends SfdxCommand {
     ));
 
     // rm -rf .heat-logs/
-    rmdirSync(environment.logs.root, { recursive: true });
+    rmSync(environment.logs.root, { recursive: true });
     // mkdir .heat-logs/
     mkdirSync(environment.logs.root);
 

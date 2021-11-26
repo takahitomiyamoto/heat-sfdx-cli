@@ -1,4 +1,13 @@
 {
+  "docs": {
+    "apexClass": {
+      "externalReferences": true,
+      "innerClasses": true,
+      "properties": true,
+      "methods": true
+    },
+    "apexTrigger": { "externalReferences": true }
+  },
   "logs": {
     "root": ".heat-logs",
     "prefix": {
