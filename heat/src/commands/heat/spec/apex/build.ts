@@ -91,7 +91,7 @@ export default class HeatManifestBuild extends SfdxCommand {
     ));
 
     // rm -rf .heat-logs/ and docs
-    rmSync(environment.logs.root, { recursive: true });
+    rmSync(environment.logs.root, { recursive: true, force: true });
     // mkdir .heat-logs/
     mkdirSync(environment.logs.root);
     mkdirSync(environment.logs.apex.rawData);
@@ -103,7 +103,7 @@ export default class HeatManifestBuild extends SfdxCommand {
     this.ux.stopSpinner(this.ux.getSpinnerStatus());
 
     const outputDir = this.flags.output || DEFAULT.OUTPUT_DIR;
-    rmSync(outputDir, { recursive: true });
+    rmSync(outputDir, { recursive: true, force: true });
     mkdirSync(outputDir);
     mkdirSync(`${outputDir}/apex-class`);
     mkdirSync(`${outputDir}/apex-trigger`);

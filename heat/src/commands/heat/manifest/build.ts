@@ -218,7 +218,7 @@ export default class HeatManifestBuild extends SfdxCommand {
     ));
 
     // rm -rf .heat-logs/
-    rmSync(environment.logs.root, { recursive: true });
+    rmSync(environment.logs.root, { recursive: true, force: true });
     // mkdir .heat-logs/
     mkdirSync(environment.logs.root);
 
@@ -241,19 +241,20 @@ export default class HeatManifestBuild extends SfdxCommand {
     };
 
     const config = {
-      metadataTypesNoFolder: environment.logs.metadataTypesNoFolder,
-      metadataTypesInFolder: environment.logs.metadataTypesInFolder,
-      metadataTypesFolder: environment.logs.metadataTypesFolder,
-      root: environment.logs.root,
-      manifest: manifestFile,
       asOfVersion: this.flags.apiversion,
-      manageableStates: manageableStates,
       child: this.flags.child,
-      verbose: this.flags.verbose,
+      metadataTypesFolder: environment.logs.metadataTypesFolder,
+      manageableStates: manageableStates,
+      manifest: manifestFile,
+      listmetadata: environment.listmetadata,
+      metadataTypesInFolder: environment.logs.metadataTypesInFolder,
+      metadataTypesNoFolder: environment.logs.metadataTypesNoFolder,
       prefix: {
         metadataTypeMembers: environment.logs.prefix.metadataTypeMembers,
         listMetadata: environment.logs.prefix.listMetadata
-      }
+      },
+      root: environment.logs.root,
+      verbose: this.flags.verbose
     };
 
     const buildManifestResult = await buildManifest(authorization, config);
