@@ -1,7 +1,7 @@
 {
   "name": "heat-sfdx-cli",
   "description": "This is a Salesforce CLI plug-In, which uses features of the heat-sfdx series.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Takahito Miyamoto",
   "bugs": "https://github.com/takahitomiyamoto/heat-sfdx-cli/issues",
   "dependencies": {
