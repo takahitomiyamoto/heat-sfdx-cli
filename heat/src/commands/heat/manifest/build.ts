@@ -135,9 +135,9 @@ export default class HeatManifestBuild extends SfdxCommand {
       this.flags.beta = true;
       this.flags.deleted = true;
       this.flags.deprecated = true;
-      this.flags.deprecatedEditable = true;
+      this.flags.deprecatededitable = true;
       this.flags.installed = true;
-      this.flags.installedEditable = true;
+      this.flags.installededitable = true;
       this.flags.released = true;
       this.flags.unmanaged = true;
       this.flags.standard = true;
@@ -154,13 +154,13 @@ export default class HeatManifestBuild extends SfdxCommand {
     if (this.flags.deprecated) {
       manageableStates.push(MANAGEABLE_STATE.DEPRECATED);
     }
-    if (this.flags.deprecatedEditable) {
+    if (this.flags.deprecatededitable) {
       manageableStates.push(MANAGEABLE_STATE.DEPRECATED_EDITABLE);
     }
     if (this.flags.installed) {
       manageableStates.push(MANAGEABLE_STATE.INSTALLED);
     }
-    if (this.flags.installedEditable) {
+    if (this.flags.installededitable) {
       manageableStates.push(MANAGEABLE_STATE.INSTALLED_EDITABLE);
     }
     if (this.flags.released) {
@@ -183,21 +183,23 @@ export default class HeatManifestBuild extends SfdxCommand {
       throw new SfdxError(messages.getMessage('errorInvalidMetadataWsdl'));
     }
 
-    if (!existsSync(manifestFile)) {
-      this.ux.pauseSpinner(() => {
-        this.ux.startSpinner(
-          `${messages.getMessage('infoCreateManifest')}: ${manifestFile}`
-        );
-        const hasDir = existsSync(
-          path.join(__dirname, path.relative(__dirname, DEFAULT.MANIFEST_DIR))
-        );
-        if (!hasDir) {
-          mkdirSync(DEFAULT.MANIFEST_DIR);
-        }
-        writeFileSyncUtf8(manifestFile, '');
-        this.ux.stopSpinner(this.ux.getSpinnerStatus());
-      }, messages.getMessage('errorInvalidManifest'));
+    if (existsSync(manifestFile)) {
+      // rm -rf ${manifestFile}
+      rmSync(manifestFile, { recursive: false, force: true });
     }
+    this.ux.pauseSpinner(() => {
+      this.ux.startSpinner(
+        `${messages.getMessage('infoCreateManifest')}: ${manifestFile}`
+      );
+      const hasDir = existsSync(
+        path.join(__dirname, path.relative(__dirname, DEFAULT.MANIFEST_DIR))
+      );
+      if (!hasDir) {
+        mkdirSync(DEFAULT.MANIFEST_DIR);
+      }
+      writeFileSyncUtf8(manifestFile, '');
+      this.ux.stopSpinner(this.ux.getSpinnerStatus());
+    }, messages.getMessage('errorInvalidManifest'));
 
     if (!existsSync(environmentFile)) {
       this.ux.pauseSpinner(() => {
@@ -246,7 +248,8 @@ export default class HeatManifestBuild extends SfdxCommand {
       metadataTypesFolder: environment.logs.metadataTypesFolder,
       manageableStates: manageableStates,
       manifest: manifestFile,
-      listmetadata: environment.listmetadata,
+      include: environment.include,
+      exclude: environment.exclude,
       metadataTypesInFolder: environment.logs.metadataTypesInFolder,
       metadataTypesNoFolder: environment.logs.metadataTypesNoFolder,
       prefix: {
