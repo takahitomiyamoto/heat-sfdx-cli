@@ -324,9 +324,9 @@
   integrity sha512-0ipbWqyDqaJ35Eg37rPYhymBEvvF8Zu8kpvDI08qEplt055cvSZ9At+w8tvrbVbr6KA0vlZbrXm5WyNEr9XChw==
 
 "@salesforce/kit@^1.2.0", "@salesforce/kit@^1.5.0":
-  version "1.5.26"
-  resolved "https://registry.yarnpkg.com/@salesforce/kit/-/kit-1.5.26.tgz#0ccac5bf90ce88b66fed7df96cf15bacbd368713"
-  integrity sha512-yirtNbNHQJ8QHgBufRPgDqpviSR5yyF2mm0UtyhGvg3ZbomzxynSawODYipAv52JdmyuMgRIekCngbzqYeJEwQ==
+  version "1.5.30"
+  resolved "https://registry.yarnpkg.com/@salesforce/kit/-/kit-1.5.30.tgz#c747f847dcc66bc6b3394133093a5fbc3caa36c4"
+  integrity sha512-6f+b/4s3bZg8iaepvH2uzdcBTDvFb4tqDJJyXZF8108YBxwMV99H0r7laY7WoSC7Np6NcdZ4LHleqoVF5v9Itg==
   dependencies:
     "@salesforce/ts-types" "^1.5.20"
     shx "^0.3.3"
@@ -407,6 +407,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/jsonwebtoken@8.5.7":
+  version "8.5.7"
+  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-8.5.7.tgz#e5dd6832215c48f61c8b79cb1747abc97a337367"
+  integrity sha512-CBHN+1unePowgS94ayLE7aVp7AfyhgG/3l2O+AjkhOMY4kAAfVI1OnbbLnOeDMAdTNLP5ZjJ3kdZanRtRQaK3Q==
+  dependencies:
+    "@types/node" "*"
+
 "@types/lodash@*":
   version "4.14.178"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.178.tgz#341f6d2247db528d4a13ddbb374bcdc80406f4f8"
@@ -477,6 +484,11 @@
   version "8.3.1"
   resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.1.tgz#1a32969cf8f0364b3d8c8af9cc3555b7805df14f"
   integrity sha512-Y2mHTRAbqfFkpjldbkHGY8JIzRN6XqYRliG8/24FcHm2D2PwW24fl5xMRTVGdrb7iMrwCaIEbLWerGIkXuFWVg==
+
+"@types/uuid@8.3.4":
+  version "8.3.4"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.4.tgz#bd86a43617df0594787d38b735f55c805becf1bc"
+  integrity sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==
 
 "@types/xml2js@0.4.9":
   version "0.4.9"
@@ -1421,9 +1433,9 @@ fast-glob@^2.0.2:
     micromatch "^3.1.10"
 
 fast-glob@^3.0.3, fast-glob@^3.2.9:
-  version "3.2.10"
-  resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.10.tgz#2734f83baa7f43b7fd41e13bc34438f4ffe284ee"
-  integrity sha512-s9nFhFnvR63wls6/kM88kQqDhMu0AfdjqouE2l5GVQPbqLgyFjjU5ry/r2yKsJxpb9Py1EYNqieFrmMaX4v++A==
+  version "3.2.11"
+  resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.11.tgz#a1172ad95ceb8a16e20caa5c5e56480e5129c1d9"
+  integrity sha512-xrO3+1bxSo3ZVHAnqzyuewYT6aMFHRAd4Kcs92MAonjwQZLsK9d0SF1IyQ3k5PoirxTW0Oe/RqFgMQ6TcNE5Ew==
   dependencies:
     "@nodelib/fs.stat" "^2.0.2"
     "@nodelib/fs.walk" "^1.2.3"
@@ -1855,10 +1867,24 @@ heat-sfdx-common@0.2.0:
     uuid "8.3.2"
     xml2js "0.4.23"
 
-heat-sfdx-metadata@0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/heat-sfdx-metadata/-/heat-sfdx-metadata-0.3.0.tgz#fef65353839e1b6ad8253e59a1a02adaffcc0bdd"
-  integrity sha512-V09g9ZmN2NO5HCulYYRiwKa6yRX69HqgsXBc4pRbDzqisLmqqL1LHwDJ9SmSLbnT29+JFnplo4IoQzZlaB3wHQ==
+heat-sfdx-common@0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/heat-sfdx-common/-/heat-sfdx-common-0.2.1.tgz#198a65c8adcd1af6d388ef0d879c19b7db36d3b7"
+  integrity sha512-930XE3n6L6nnMvVfr4uZgLVpKeRqVYlI7Y2gtuRC4rfD3iHrPCo9qS8lsIpK8Ip0/BlGQqmo80H1dzrHUWjtVQ==
+  dependencies:
+    "@types/jsonwebtoken" "8.5.7"
+    "@types/node" "17.0.8"
+    "@types/uuid" "8.3.4"
+    "@types/xml2js" "0.4.9"
+    jsonwebtoken "8.5.1"
+    typescript "4.5.4"
+    uuid "8.3.2"
+    xml2js "0.4.23"
+
+heat-sfdx-metadata@0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/heat-sfdx-metadata/-/heat-sfdx-metadata-0.3.1.tgz#a70f088dde2b7928c96a1db32e9514996975966a"
+  integrity sha512-ZJihEj+nrPkAdC+TwZsxYHH4Nc2Df0JwiKzaCiFsA3jsVacOiKmeJUuiqLsVhiCREy5JaUarXHY5XyEojoW3rw==
   dependencies:
     "@types/bluebird" "3.5.36"
     "@types/node" "17.0.8"
@@ -1869,15 +1895,15 @@ heat-sfdx-metadata@0.3.0:
     soap "0.43.0"
     typescript "4.5.4"
 
-heat-sfdx-tooling@0.1.15:
-  version "0.1.15"
-  resolved "https://registry.yarnpkg.com/heat-sfdx-tooling/-/heat-sfdx-tooling-0.1.15.tgz#f3651778739c062518d5d7f884c0c8827fc1a71c"
-  integrity sha512-zpvXIeD8WtLT21Y4sFwCa/3e25Db3NpZagzXiAij4k8b3ngYY/VxBQr2B5BgwDMx2R9m3gg4gwDdO4QO4M5uEw==
+heat-sfdx-tooling@0.1.17:
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/heat-sfdx-tooling/-/heat-sfdx-tooling-0.1.17.tgz#d6f01cbfeb6984883936f88ba8b72d5f4b595d15"
+  integrity sha512-NWyE7V1B0F+H02k9pSFFrpqPyxB5UP13gPeVKkqm+5pZFQz6TSrjQTrqH+z0HWJgHTMUTuzNpN/PtmsRbdoDWw==
   dependencies:
     "@types/json2md" "1.5.1"
-    heat-sfdx-common "0.2.0"
+    heat-sfdx-common "0.2.1"
     json2md "1.12.0"
-    typescript "4.5.2"
+    typescript "4.5.4"
     uuid "8.3.2"
 
 hosted-git-info@^2.1.4:
@@ -3881,11 +3907,6 @@ typescript@4.4.4:
   version "4.4.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.4.tgz#2cd01a1a1f160704d3101fd5a58ff0f9fcb8030c"
   integrity sha512-DqGhF5IKoBl8WNf8C1gu8q0xZSInh9j1kJJMqT3a94w1JzVaBU4EXOSMrz9yDqMT0xt3selp83fuFMQ0uzv6qA==
-
-typescript@4.5.2:
-  version "4.5.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.2.tgz#8ac1fba9f52256fdb06fb89e4122fa6a346c2998"
-  integrity sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==
 
 typescript@4.5.4:
   version "4.5.4"
