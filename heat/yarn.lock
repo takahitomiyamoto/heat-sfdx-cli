@@ -416,6 +416,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/jsonwebtoken@8.5.8":
+  version "8.5.8"
+  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-8.5.8.tgz#01b39711eb844777b7af1d1f2b4cf22fda1c0c44"
+  integrity sha512-zm6xBQpFDIDM6o9r6HSgDeIcLy82TKWctCXEPbJJcXb5AKmi5BNNdLXneixK4lplX3PqIVcwLBCGE/kAGnlD4A==
+  dependencies:
+    "@types/node" "*"
+
 "@types/lodash@*":
   version "4.14.178"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.178.tgz#341f6d2247db528d4a13ddbb374bcdc80406f4f8"
@@ -438,7 +445,7 @@
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-5.2.7.tgz#315d570ccb56c53452ff8638738df60726d5b6ea"
   integrity sha512-NYrtPht0wGzhwe9+/idPaBB+TqkY9AhTvOLMkThm0IoEfLaiVQZwBwyJ5puCkO3AUCWrmcoePjp2mbFocKy4SQ==
 
-"@types/node@*":
+"@types/node@*", "@types/node@17.0.13":
   version "17.0.13"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.13.tgz#5ed7ed7c662948335fcad6c412bb42d99ea754e3"
   integrity sha512-Y86MAxASe25hNzlDbsviXl8jQHb0RDvKt4c40ZJQ1Don0AAL0STLZSs4N+6gLEO55pedy7r2cLwS+ZDxPm/2Bw==
@@ -1956,6 +1963,20 @@ heat-sfdx-common@0.2.1:
     "@types/xml2js" "0.4.9"
     jsonwebtoken "8.5.1"
     typescript "4.5.4"
+    uuid "8.3.2"
+    xml2js "0.4.23"
+
+heat-sfdx-common@0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/heat-sfdx-common/-/heat-sfdx-common-0.2.5.tgz#0263e82e3a16dc4e4c9245d8d58659df0b7cb63f"
+  integrity sha512-0LUe980CidavrrpjtZAkoU2YrOpUpfKlaiGM4tL63Z4687fDxblidvv8FhCSc3pLQWxK0yH5CrFgEbgxAAHbew==
+  dependencies:
+    "@types/jsonwebtoken" "8.5.8"
+    "@types/node" "17.0.13"
+    "@types/uuid" "8.3.4"
+    "@types/xml2js" "0.4.9"
+    jsonwebtoken "8.5.1"
+    typescript "4.5.5"
     uuid "8.3.2"
     xml2js "0.4.23"
 
