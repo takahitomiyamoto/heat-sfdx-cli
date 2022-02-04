@@ -13,7 +13,6 @@ import {
 
 const DEFAULT = {
   ENVIRONMENT: 'config/environment.json',
-  HAS_HEADER: true,
   CHARCODE: 'utf8',
   KEYS: 'Profile.applicationVisibilities'
 };
@@ -119,7 +118,7 @@ export default class HeatConvertJson2csv extends SfdxCommand {
     const outputFile = this.flags.outputfile;
     rmSync(`${outputFile}`, { recursive: false, force: true });
 
-    const hasHeader = this.flags.header || DEFAULT.HAS_HEADER;
+    const hasHeader = this.flags.header;
     const columns = this.flags.columns;
 
     this.ux.stopSpinner(this.ux.getSpinnerStatus());
