@@ -6,6 +6,7 @@
   "inputFileFlagDescription": "input file",
   "outputFileFlagDescription": "output file",
   "hasHeaderFlagDescription": "set this flag if the csv has a header",
+  "columnsFlagDescription": "comma separated header columns (ex. apexClass,enabled)",
   "errorInvalidEnvironment": "Missing required config file: \n --environment config/environment.json",
   "errorNoInputFile": "Missing required config file: \n -i, --inputfile",
   "errorNoOutputFile": "Missing required config file: \n -o, --outputfile",

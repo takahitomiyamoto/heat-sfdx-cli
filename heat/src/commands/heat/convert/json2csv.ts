@@ -30,7 +30,7 @@ export default class HeatConvertJson2csv extends SfdxCommand {
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-    `\n$ sfdx heat:convert:json2csv --header -k Profile.classAccesses -i .heat-logs/input.json -o .heat-logs/output.csv`
+    `\n$ sfdx heat:convert:json2csv --header --columns apexClass,enabled -k Profile.classAccesses -i .heat-logs/input.json -o .heat-logs/output.csv`
   ];
 
   public static args = [{ name: 'file' }];
@@ -51,6 +51,9 @@ export default class HeatConvertJson2csv extends SfdxCommand {
     }),
     header: flags.boolean({
       description: messages.getMessage('hasHeaderFlagDescription')
+    }),
+    columns: flags.string({
+      description: messages.getMessage('columnsFlagDescription')
     }),
     charcode: flags.string({
       char: 'c',
@@ -117,6 +120,7 @@ export default class HeatConvertJson2csv extends SfdxCommand {
     rmSync(`${outputFile}`, { recursive: false, force: true });
 
     const hasHeader = this.flags.header || DEFAULT.HAS_HEADER;
+    const columns = this.flags.columns;
 
     this.ux.stopSpinner(this.ux.getSpinnerStatus());
     this.ux.startSpinner(
@@ -132,6 +136,7 @@ export default class HeatConvertJson2csv extends SfdxCommand {
     const params = {
       jsonString: inputFileObj,
       csvFile: outputFile,
+      columns: columns,
       charCode: charCode,
       hasHeader: hasHeader,
       keys: keys
