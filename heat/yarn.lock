@@ -1988,10 +1988,10 @@ heat-sfdx-common@0.2.1:
     uuid "8.3.2"
     xml2js "0.4.23"
 
-heat-sfdx-common@0.2.13:
-  version "0.2.13"
-  resolved "https://registry.yarnpkg.com/heat-sfdx-common/-/heat-sfdx-common-0.2.13.tgz#ab68cd6ffa11c6665c31a9286b25bba0d4c12a0d"
-  integrity sha512-WVAppOhgQf4tTOithEvkVzKV6qfTMoYLi3QE005hQpOfOfRBOccWdcF0du26HFITCyzr8X3cxZSk7kj8G/o1BQ==
+heat-sfdx-common@0.2.14:
+  version "0.2.14"
+  resolved "https://registry.yarnpkg.com/heat-sfdx-common/-/heat-sfdx-common-0.2.14.tgz#0b5d12e0b66607d22ebe44adbe6e0a5d2ccdfe5b"
+  integrity sha512-sLveIF7k5zeUTi0H8O7Lm8Qh/LYgv0ghDCBq+3yUqeJ5nrSu5R8Ji/nUy3Jvgdr/v99DmohL48geAUgRtVUbCw==
   dependencies:
     "@types/jsonwebtoken" "8.5.8"
     "@types/node" "17.0.14"
