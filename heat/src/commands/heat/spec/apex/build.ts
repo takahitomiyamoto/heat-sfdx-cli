@@ -23,7 +23,7 @@ Messages.importMessagesDirectory(__dirname);
 // TODO 共通のメッセージを別ファイルに分割
 const messages = Messages.loadMessages('heat-sfdx-cli', 'spec-apex-build');
 
-export default class HeatManifestBuild extends SfdxCommand {
+export default class HeatSpecApexBuild extends SfdxCommand {
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [

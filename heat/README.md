@@ -44,7 +44,7 @@ $ npm install -g heat-sfdx-cli
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-heat-sfdx-cli/0.2.4 darwin-x64 node-v16.13.1
+heat-sfdx-cli/0.2.5 darwin-x64 node-v16.13.1
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND
@@ -52,11 +52,53 @@ USAGE
 ```
 <!-- usagestop -->
 <!-- commands -->
+* [`sfdx heat:convert:json2csv [-e <string>] [-i <string>] [-o <string>] [--header] [-c <string>] [-k <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatconvertjson2csv--e-string--i-string--o-string---header--c-string--k-string---verbose---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 * [`sfdx heat:convert:xml2json [-e <string>] [-i <string>] [-o <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatconvertxml2json--e-string--i-string--o-string---verbose---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 * [`sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [--recommended] [--all] [--child] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatmanifestbuild--e-string--x-string--w-string---beta---deleted---deprecated---deprecatededitable---installed---installededitable---released---unmanaged---standard---recommended---all---child--u-string---apiversion-string---verbose---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 * [`sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatorg--n-string--f--v-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 * [`sfdx heat:spec:apex:build [-e <string>] [-o <string>] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heatspecapexbuild--e-string--o-string--u-string---apiversion-string---verbose---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 * [`sfdx heat:tooling:get:execute [-e <string>] [-d <string>] [-f <string>] [-r <string>] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-heattoolinggetexecute--e-string--d-string--f-string--r-string--u-string---apiversion-string---verbose---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+
+## `sfdx heat:convert:json2csv [-e <string>] [-i <string>] [-o <string>] [--header] [-c <string>] [-k <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+
+convert a file
+
+```
+USAGE
+  $ sfdx heat:convert:json2csv [-e <string>] [-i <string>] [-o <string>] [--header] [-c <string>] [-k <string>] 
+  [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+OPTIONS
+  -c, --charcode=charcode                                                           [default: utf8] character code
+
+  -e, --environment=environment                                                     [default: config/environment.json]
+                                                                                    environment file
+
+  -i, --inputfile=inputfile                                                         input file
+
+  -k, --keys=keys                                                                   [default:
+                                                                                    Profile.applicationVisibilities]
+                                                                                    JSON keys
+
+  -o, --outputfile=outputfile                                                       output file
+
+  --header                                                                          set this flag if the csv has a
+                                                                                    header
+
+  --json                                                                            format output as json
+
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
+                                                                                    this command invocation
+
+  --verbose                                                                         emit additional command output to
+                                                                                    stdout
+
+EXAMPLE
+
+  $ sfdx heat:convert:json2csv --header -k Profile.classAccesses -i .heat-logs/input.json -o .heat-logs/output.csv
+```
+
+_See code: [src/commands/heat/convert/json2csv.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.2.5/src/commands/heat/convert/json2csv.ts)_
 
 ## `sfdx heat:convert:xml2json [-e <string>] [-i <string>] [-o <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -85,10 +127,10 @@ OPTIONS
 
 EXAMPLE
 
-  $ sfdx heat:convert:xml2json -i .heat-logs/input.xml -o .heat-logs/input.json
+  $ sfdx heat:convert:xml2json -i .heat-logs/input.xml -o .heat-logs/output.json
 ```
 
-_See code: [src/commands/heat/convert/xml2json.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.2.4/src/commands/heat/convert/xml2json.ts)_
+_See code: [src/commands/heat/convert/xml2json.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.2.5/src/commands/heat/convert/xml2json.ts)_
 
 ## `sfdx heat:manifest:build [-e <string>] [-x <string>] [-w <string>] [--beta] [--deleted] [--deprecated] [--deprecatededitable] [--installed] [--installededitable] [--released] [--unmanaged] [--standard] [--recommended] [--all] [--child] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -179,7 +221,7 @@ EXAMPLES
   $ sfdx heat:manifest:build --apiversion 52.0 -u myOrg@example.com --all
 ```
 
-_See code: [src/commands/heat/manifest/build.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.2.4/src/commands/heat/manifest/build.ts)_
+_See code: [src/commands/heat/manifest/build.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.2.5/src/commands/heat/manifest/build.ts)_
 
 ## `sfdx heat:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -217,7 +259,7 @@ EXAMPLES
     Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
 ```
 
-_See code: [src/commands/heat/org.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.2.4/src/commands/heat/org.ts)_
+_See code: [src/commands/heat/org.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.2.5/src/commands/heat/org.ts)_
 
 ## `sfdx heat:spec:apex:build [-e <string>] [-o <string>] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -253,7 +295,7 @@ EXAMPLE
   $ sfdx heat:spec:apex:build --apiversion 52.0 -u myOrg@example.com -o docs
 ```
 
-_See code: [src/commands/heat/spec/apex/build.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.2.4/src/commands/heat/spec/apex/build.ts)_
+_See code: [src/commands/heat/spec/apex/build.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.2.5/src/commands/heat/spec/apex/build.ts)_
 
 ## `sfdx heat:tooling:get:execute [-e <string>] [-d <string>] [-f <string>] [-r <string>] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -291,11 +333,11 @@ OPTIONS
 
 EXAMPLE
 
-  $ sfdx heat:tooling:get:execute --apiversion 54.0 -u myOrg@example.com -d .logs -f result.txt -r 
+  $ sfdx heat:tooling:get:execute --apiversion 54.0 -u myOrg@example.com -d .logs -f result.json -r 
   /tooling/sobjects/Profile/describe
 ```
 
-_See code: [src/commands/heat/tooling/get/execute.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.2.4/src/commands/heat/tooling/get/execute.ts)_
+_See code: [src/commands/heat/tooling/get/execute.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.2.5/src/commands/heat/tooling/get/execute.ts)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 

@@ -23,11 +23,11 @@ Messages.importMessagesDirectory(__dirname);
 // TODO 共通のメッセージを別ファイルに分割
 const messages = Messages.loadMessages('heat-sfdx-cli', 'convert');
 
-export default class HeatToolingGetExecute extends SfdxCommand {
+export default class HeatConvertXml2json extends SfdxCommand {
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-    `\n$ sfdx heat:convert:xml2json -i .heat-logs/input.xml -o .heat-logs/input.json`
+    `\n$ sfdx heat:convert:xml2json -i .heat-logs/input.xml -o .heat-logs/output.json`
   ];
 
   public static args = [{ name: 'file' }];
