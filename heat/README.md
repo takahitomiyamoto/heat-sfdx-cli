@@ -300,7 +300,7 @@ OPTIONS
 
 EXAMPLE
 
-  $ sfdx heat:spec:apex:build --apiversion 52.0 -u myOrg@example.com -o docs
+  $ sfdx heat:spec:apex:build --apiversion 57.0 -u myOrg@example.com -o docs
 ```
 
 _See code: [src/commands/heat/spec/apex/build.ts](https://github.com/takahitomiyamoto/heat-sfdx-cli/blob/v0.3.3/src/commands/heat/spec/apex/build.ts)_

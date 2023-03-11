@@ -20,14 +20,17 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-// TODO 共通のメッセージを別ファイルに分割
 const messages = Messages.loadMessages('heat-sfdx-cli', 'spec-apex-build');
+const messagesJsonEnv = Messages.loadMessages(
+  'heat-sfdx-cli',
+  'common-json-env'
+);
 
 export default class HeatSpecApexBuild extends SfdxCommand {
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-    `\n$ sfdx heat:spec:apex:build --apiversion 52.0 -u myOrg@example.com -o docs`
+    `\n$ sfdx heat:spec:apex:build --apiversion 57.0 -u myOrg@example.com -o docs`
   ];
 
   public static args = [{ name: 'file' }];
@@ -55,21 +58,13 @@ export default class HeatSpecApexBuild extends SfdxCommand {
   // Set this to true if your command requires a project workspace; 'requiresProject' is false by default
   protected static requiresProject = false;
 
-  public async run(): Promise<AnyJson> {
-    // TODO: 関数に分割
-
-    this.ux.startSpinner(messages.getMessage('infoGetConnection'));
-    // this.org is guaranteed because requiresUsername=true, as opposed to supportsUsername
-    const conn = this.org.getConnection();
-
-    this.ux.stopSpinner(this.ux.getSpinnerStatus());
-    this.ux.startSpinner(messages.getMessage('infoCheckFlags'));
-
-    // parameters required
+  private validateParams(): void {
     if (!this.flags.apiversion) {
       throw new SfdxError(messages.getMessage('errorNoApiversion'));
     }
+  }
 
+  private generateEnvFile(): any {
     const environmentFile = this.flags.environment || DEFAULT.ENVIRONMENT;
 
     if (!existsSync(environmentFile)) {
@@ -79,7 +74,7 @@ export default class HeatSpecApexBuild extends SfdxCommand {
         );
         writeFileSyncUtf8(
           environmentFile,
-          messages.getMessage('jsonEnvironment')
+          messagesJsonEnv.getMessage('jsonEnv')
         );
         this.ux.stopSpinner(this.ux.getSpinnerStatus());
       }, messages.getMessage('errorInvalidEnvironment'));
@@ -90,8 +85,13 @@ export default class HeatSpecApexBuild extends SfdxCommand {
       path.relative(__dirname, environmentFile)
     ));
 
+    return environment;
+  }
+
+  private resetFolders(environment: any, outputDir: string): void {
     // rm -rf .heat-logs/ and docs
     rmSync(environment.logs.root, { recursive: true, force: true });
+
     // mkdir .heat-logs/
     mkdirSync(environment.logs.root);
     mkdirSync(environment.logs.apex.rawData);
@@ -100,15 +100,31 @@ export default class HeatSpecApexBuild extends SfdxCommand {
     mkdirSync(environment.logs.apexTrigger.rawData);
     mkdirSync(environment.logs.apexTrigger.symbolTable);
 
-    this.ux.stopSpinner(this.ux.getSpinnerStatus());
-
-    const outputDir = this.flags.output || DEFAULT.OUTPUT_DIR;
     rmSync(outputDir, { recursive: true, force: true });
     mkdirSync(outputDir);
     mkdirSync(`${outputDir}/apex-class`);
     mkdirSync(`${outputDir}/apex-trigger`);
+  }
+
+  public async run(): Promise<AnyJson> {
+    // TODO: 関数に分割
+
+    this.ux.startSpinner(messages.getMessage('infoGetConnection'));
+
+    // this.org is guaranteed because requiresUsername=true, as opposed to supportsUsername
+    const conn = this.org.getConnection();
 
     this.ux.stopSpinner(this.ux.getSpinnerStatus());
+    this.ux.startSpinner(messages.getMessage('infoCheckFlags'));
+
+    // parameters required
+    this.validateParams();
+
+    const environment = this.generateEnvFile();
+    const outputDir = this.flags.output || DEFAULT.OUTPUT_DIR;
+
+    this.ux.stopSpinner(this.ux.getSpinnerStatus());
+    this.resetFolders(environment, outputDir);
     this.ux.startSpinner(
       `${messages.getMessage('infoAwaitBuildSpec')}: ${outputDir}/`
     );
@@ -131,6 +147,7 @@ export default class HeatSpecApexBuild extends SfdxCommand {
 
     // generate spec docs of Apex Class
     await buildApexClassSpecs(authorization);
+
     // generate spec docs of Apex Trigger
     await buildApexTriggerSpecs(authorization);
 
