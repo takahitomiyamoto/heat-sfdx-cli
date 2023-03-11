@@ -5,6 +5,7 @@
   "errorInvalidEnvironment": "Missing required config file: \n --environment config/environment.json",
   "infoGetConnection": "getting connection",
   "infoCheckFlags": "checking flags",
-  "infoAwaitBuildSpec": "building your spec docs",
-  "infoCreateEnvironment": "creating environment file"
+  "infoCreateEnvironment": "creating environment file",
+  "infoGenerateSpecsApexClass": "building your spec docs of Apex Class",
+  "infoGenerateSpecsApexTrigger": "building your spec docs of Apex Trigger"
 }

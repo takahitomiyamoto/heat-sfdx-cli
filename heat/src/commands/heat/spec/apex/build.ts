@@ -58,7 +58,7 @@ export default class HeatSpecApexBuild extends SfdxCommand {
   // Set this to true if your command requires a project workspace; 'requiresProject' is false by default
   protected static requiresProject = false;
 
-  private validateParams(): void {
+  private checkFlags(): void {
     if (!this.flags.apiversion) {
       throw new SfdxError(messages.getMessage('errorNoApiversion'));
     }
@@ -115,19 +115,16 @@ export default class HeatSpecApexBuild extends SfdxCommand {
     const conn = this.org.getConnection();
 
     this.ux.stopSpinner(this.ux.getSpinnerStatus());
-    this.ux.startSpinner(messages.getMessage('infoCheckFlags'));
 
     // parameters required
-    this.validateParams();
+    this.ux.startSpinner(messages.getMessage('infoCheckFlags'));
+    this.checkFlags();
+    this.ux.stopSpinner(this.ux.getSpinnerStatus());
 
     const environment = this.generateEnvFile();
     const outputDir = this.flags.output || DEFAULT.OUTPUT_DIR;
 
-    this.ux.stopSpinner(this.ux.getSpinnerStatus());
     this.resetFolders(environment, outputDir);
-    this.ux.startSpinner(
-      `${messages.getMessage('infoAwaitBuildSpec')}: ${outputDir}/`
-    );
 
     const authorization = {
       // @ts-ignore
@@ -146,10 +143,14 @@ export default class HeatSpecApexBuild extends SfdxCommand {
     };
 
     // generate spec docs of Apex Class
+    this.ux.startSpinner(messages.getMessage('infoGenerateSpecsApexClass'));
     await buildApexClassSpecs(authorization);
+    this.ux.stopSpinner(this.ux.getSpinnerStatus());
 
     // generate spec docs of Apex Trigger
+    this.ux.startSpinner(messages.getMessage('infoGenerateSpecsApexTrigger'));
     await buildApexTriggerSpecs(authorization);
+    this.ux.stopSpinner(this.ux.getSpinnerStatus());
 
     // generate home.md
     // TODO: LWC OSS のサンプルページのフォーマットを参考に
