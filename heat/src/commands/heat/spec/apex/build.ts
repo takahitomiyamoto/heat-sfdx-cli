@@ -91,6 +91,7 @@ export default class HeatSpecApexBuild extends SfdxCommand {
   private resetFolders(environment: any, outputDir: string): void {
     // rm -rf .heat-logs/ and docs
     rmSync(environment.logs.root, { recursive: true, force: true });
+    rmSync(outputDir, { recursive: true, force: true });
 
     // mkdir .heat-logs/
     mkdirSync(environment.logs.root);
@@ -100,7 +101,7 @@ export default class HeatSpecApexBuild extends SfdxCommand {
     mkdirSync(environment.logs.apexTrigger.rawData);
     mkdirSync(environment.logs.apexTrigger.symbolTable);
 
-    rmSync(outputDir, { recursive: true, force: true });
+    // mkdir docs/
     mkdirSync(outputDir);
     mkdirSync(`${outputDir}/apex-class`);
     mkdirSync(`${outputDir}/apex-trigger`);
