@@ -10,9 +10,9 @@
     "@oclif/errors": "^1",
     "@salesforce/command": "^2",
     "@salesforce/core": "^2",
-    "heat-sfdx-common": "0.3.0",
-    "heat-sfdx-metadata": "0.3.1",
-    "heat-sfdx-tooling": "0.2.0",
+    "heat-sfdx-common": "0.3.1",
+    "heat-sfdx-metadata": "0.3.2",
+    "heat-sfdx-tooling": "0.2.1",
     "tslib": "^1"
   },
   "devDependencies": {

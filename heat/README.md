@@ -46,7 +46,7 @@ $ npm install -g heat-sfdx-cli
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-heat-sfdx-cli/0.3.3 darwin-x64 node-v16.14.2
+heat-sfdx-cli/0.3.3 darwin-x64 node-v18.15.0
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND
