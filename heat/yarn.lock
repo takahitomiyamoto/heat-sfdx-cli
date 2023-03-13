@@ -2046,10 +2046,10 @@ heat-sfdx-metadata@0.3.2:
     soap "1.0.0"
     typescript "4.9.5"
 
-heat-sfdx-tooling@0.2.6:
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/heat-sfdx-tooling/-/heat-sfdx-tooling-0.2.6.tgz#a5bac44842316f7a7cc02eaf00b264d483b0f1af"
-  integrity sha512-6ajHy3+ZYVQt+IpXgODCPWcIw3HG/diF+9VNVjK2U7BRPKes8+tBFi7K7d3Fxq38GRMtpbpD+oyrpYD1HoVxAA==
+heat-sfdx-tooling@0.2.7:
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/heat-sfdx-tooling/-/heat-sfdx-tooling-0.2.7.tgz#e8f9813e9c618ae133e50cf64ade32e5403906ef"
+  integrity sha512-4Z1MhsNNBKYQJqks+q9YzM7HlQSqZrQAvJl1/yjWEbwavkEl5a7Ib+kDoUtfCXwwEL1iqGnGTWWASHXKxyL45g==
   dependencies:
     "@types/json2md" "1.5.1"
     heat-sfdx-common "0.3.1"
