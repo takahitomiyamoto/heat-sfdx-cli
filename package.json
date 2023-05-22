@@ -26,10 +26,10 @@
     "typedoc": "typedoc --out docs heat/src && touch docs/.nojekyll"
   },
   "devDependencies": {
-    "prettier": "2.8.4",
-    "typedoc": "0.23.26"
+    "prettier": "2.8.8",
+    "typedoc": "0.24.7"
   },
   "dependencies": {
-    "typescript": "4.9.5"
+    "typescript": "5.0.4"
   }
 }
