@@ -144,7 +144,6 @@ export default class HeatConvertJson2csv extends SfdxCommand {
     };
     const result = await json2csv(params).then((outputSize) => {
       if (params.verbose) {
-        console.info(`input size: ${inputFileObj.length}`);
         console.info(`output size: ${outputSize}`);
       }
     });
