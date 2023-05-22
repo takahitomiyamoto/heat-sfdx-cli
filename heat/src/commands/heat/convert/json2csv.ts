@@ -132,15 +132,22 @@ export default class HeatConvertJson2csv extends SfdxCommand {
     const rawKeys = this.flags.keys || DEFAULT.KEYS;
     const keys = rawKeys.split('.');
     const charCode: BufferEncoding = this.flags.charcode || DEFAULT.CHARCODE;
+    const verbose = this.flags.verbose;
     const params = {
       jsonString: inputFileObj,
       csvFile: outputFile,
       columns: columns,
       charCode: charCode,
       hasHeader: hasHeader,
-      keys: keys
+      keys: keys,
+      verbose: verbose
     };
-    const result = await json2csv(params);
+    const result = await json2csv(params).then((outputSize) => {
+      if (params.verbose) {
+        console.info(`input size: ${inputFileObj.length}`);
+        console.info(`output size: ${outputSize}`);
+      }
+    });
 
     this.ux.stopSpinner(this.ux.getSpinnerStatus());
 
