@@ -108,10 +108,10 @@ export default class HeatRestGetExecute extends SfdxCommand {
     this.ux.stopSpinner(this.ux.getSpinnerStatus());
 
     const outputDir = this.flags.outputdir || DEFAULT.OUTPUT_DIR;
-    // rm -rf .logs/
-    rmSync(outputDir, { recursive: true, force: true });
     // mkdir .logs/
-    mkdirSync(outputDir);
+    if (!existsSync(outputDir)) {
+      mkdirSync(outputDir);
+    }
 
     const outputFile = this.flags.outputfile || DEFAULT.OUTPUT_FILE;
     // rm .logs/result.json
