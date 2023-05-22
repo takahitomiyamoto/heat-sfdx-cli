@@ -1,5 +1,5 @@
 {
-  "commandDescription": "Tooling API - execute GET",
+  "commandDescription": "REST API - execute GET",
   "environmentFlagDescription": "[default: config/environment.json] environment file",
   "outputDirFlagDescription": "[default: .logs] output directory",
   "outputFileFlagDescription": "[default: result.json] output file",

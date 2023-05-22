@@ -23,13 +23,13 @@ Messages.importMessagesDirectory(__dirname);
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
 // TODO 共通のメッセージを別ファイルに分割
-const messages = Messages.loadMessages('heat-sfdx-cli', 'tooling');
+const messages = Messages.loadMessages('heat-sfdx-cli', 'rest');
 
-export default class HeatToolingGetExecute extends SfdxCommand {
+export default class HeatRestGetExecute extends SfdxCommand {
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-    `\n$ sfdx heat:tooling:get:execute --apiversion 54.0 -u myOrg@example.com -d .logs -f result.json -r /tooling/sobjects/Profile/describe`
+    `\n$ sfdx heat:rest:get:execute --apiversion 54.0 -u myOrg@example.com -d .logs -f result.json -r /tooling/sobjects/Profile/describe`
   ];
 
   public static args = [{ name: 'file' }];
