@@ -2059,10 +2059,10 @@ heat-sfdx-common@0.3.1:
     uuid "9.0.0"
     xml2js "0.4.23"
 
-heat-sfdx-common@0.3.4:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/heat-sfdx-common/-/heat-sfdx-common-0.3.4.tgz#642bbb1c3433deb148c350d845c55c55463e625e"
-  integrity sha512-fAUkS2BpEh32aA7CAKJa0KqigQRs8cc68EPMOLW3SGdiXJKn23kGtOY/r9nUhTFQ2ViKthhwn504ZASlaVgokQ==
+heat-sfdx-common@0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/heat-sfdx-common/-/heat-sfdx-common-0.3.5.tgz#ebf39987a549cef7d8e79af1749f7fc9054563be"
+  integrity sha512-szwD91QrWvIUKQXZkifrQWwxp5BeTtNZujUwmqnrw8L8xkcyLWKkSPfitcMJTCkEBef/OXO0XXvcKfLLZ4KwIw==
   dependencies:
     "@types/jsonwebtoken" "9.0.2"
     "@types/node" "20.2.3"

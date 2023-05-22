@@ -142,11 +142,7 @@ export default class HeatConvertJson2csv extends SfdxCommand {
       keys: keys,
       verbose: verbose
     };
-    const result = await json2csv(params).then((outputSize) => {
-      if (params.verbose) {
-        console.info(`output size: ${outputSize}`);
-      }
-    });
+    const result = await json2csv(params);
 
     this.ux.stopSpinner(this.ux.getSpinnerStatus());
 
