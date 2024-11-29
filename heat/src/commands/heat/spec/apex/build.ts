@@ -80,10 +80,9 @@ export default class HeatSpecApexBuild extends SfdxCommand {
       }, messages.getMessage('errorInvalidEnvironment'));
     }
 
-    const environment = require(path.join(
-      __dirname,
-      path.relative(__dirname, environmentFile)
-    ));
+    const environment = require(
+      path.join(__dirname, path.relative(__dirname, environmentFile))
+    );
 
     return environment;
   }

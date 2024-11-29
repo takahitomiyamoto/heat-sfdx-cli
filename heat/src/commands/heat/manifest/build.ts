@@ -214,10 +214,9 @@ export default class HeatManifestBuild extends SfdxCommand {
       }, messages.getMessage('errorInvalidEnvironment'));
     }
 
-    const environment = require(path.join(
-      __dirname,
-      path.relative(__dirname, environmentFile)
-    ));
+    const environment = require(
+      path.join(__dirname, path.relative(__dirname, environmentFile))
+    );
 
     // rm -rf .heat-logs/
     rmSync(environment.logs.root, { recursive: true, force: true });
